@@ -157,6 +157,47 @@ body{background:var(--ink);color:var(--cream);font-family:'Lato',sans-serif;font
 .modal-highlights li::before{content:'✦';color:var(--gold);font-size:10px;margin-top:3px;flex-shrink:0}
 .modal-tip{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:14px 18px;font-size:13px;color:rgba(253,248,240,.55);line-height:1.6}
 .modal-tip strong{color:var(--silver);font-weight:700}
+.modal-links{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.modal-link{display:flex;align-items:center;gap:8px;text-decoration:none;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:.5px;padding:11px 18px;border-radius:var(--radius);transition:transform var(--trans),box-shadow var(--trans),background var(--trans);border:1px solid;flex:1 1 auto;justify-content:center;min-width:130px}
+.modal-link.primary{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.modal-link.primary:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 6px 20px rgba(196,154,60,.35)}
+.modal-link.secondary{background:transparent;color:var(--gold-lt);border-color:rgba(196,154,60,.4)}
+.modal-link.secondary:hover{background:rgba(196,154,60,.12);transform:translateY(-2px)}
+.modal-link.accom{background:rgba(143,199,232,.15);color:#add4f0;border-color:rgba(143,199,232,.4)}
+.modal-link.accom:hover{background:rgba(143,199,232,.25);transform:translateY(-2px)}
+.modal-link.stay{background:rgba(126,200,154,.15);color:#9bdcb5;border-color:rgba(126,200,154,.4)}
+.modal-link.stay:hover{background:rgba(126,200,154,.25);transform:translateY(-2px)}
+.modal-link .ml-icon{font-size:15px}
+/* resort comparison table */
+.compare-wrap{overflow-x:auto;margin-bottom:40px;border:1px solid rgba(143,199,232,.2);border-radius:var(--radius);scrollbar-width:thin}
+.compare-table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px}
+.compare-table th{text-align:left;font-family:'Lato',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#add4f0;background:rgba(143,199,232,.08);padding:12px 14px;border-bottom:1px solid rgba(143,199,232,.2);white-space:nowrap}
+.compare-table td{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.05);color:rgba(253,248,240,.75);vertical-align:middle}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table tr.pick-row td{background:rgba(196,154,60,.08)}
+.compare-table .ct-name{font-family:'Playfair Display',serif;font-weight:700;color:var(--cream);font-size:14px;cursor:pointer;white-space:nowrap}
+.compare-table .ct-name:hover{color:var(--gold-lt)}
+.compare-table .ct-flag{margin-right:6px}
+.ct-pick-star{color:var(--gold);margin-left:6px;font-size:12px}
+.ct-rate{font-size:13px;letter-spacing:1px}
+.ct-rate .on{color:var(--gold-lt)}
+.ct-rate .off{color:rgba(255,255,255,.15)}
+.compare-legend{font-size:11.5px;color:rgba(253,248,240,.4);font-style:italic;padding:10px 4px 0}
+.pick-badge{position:absolute;top:0;left:0;background:var(--gold);color:var(--ink);font-family:'Lato',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-bottom-right-radius:var(--radius);z-index:2}
+.stop-card.is-pick{border-color:rgba(196,154,60,.5)}
+.stop-card.is-pick:hover{border-color:var(--gold)}
+.card-bestfor{font-size:11px;color:#9bdcb5;font-style:italic;margin-top:8px;padding-top:8px;border-top:1px solid rgba(126,200,154,.15)}
+.modal-bestfor{display:inline-block;background:rgba(126,200,154,.15);border:1px solid rgba(126,200,154,.35);color:#bfe8cf;font-size:11px;font-weight:700;letter-spacing:.5px;padding:5px 12px;border-radius:20px;margin-bottom:16px}
+.modal-staybox{background:rgba(126,200,154,.07);border:1px solid rgba(126,200,154,.25);border-radius:var(--radius);padding:16px 18px;margin-bottom:20px}
+.stay-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:13.5px}
+.stay-row:last-of-type{border-bottom:none}
+.stay-k{color:rgba(253,248,240,.5);font-size:12px;letter-spacing:.5px;flex-shrink:0}
+.stay-v{color:var(--cream);font-weight:400;text-align:right}
+.stay-actions{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.stay-copy{background:rgba(126,200,154,.2);border:1px solid rgba(126,200,154,.45);color:#bfe8cf;font-family:'Lato',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.5px;padding:9px 14px;border-radius:var(--radius);cursor:pointer;transition:background var(--trans),transform var(--trans)}
+.stay-copy:hover{background:rgba(126,200,154,.32);transform:translateY(-1px)}
+.stay-copy.copied{background:rgba(126,200,154,.5);color:#fff}
+.stay-hint{font-size:11.5px;color:rgba(253,248,240,.4);font-style:italic;line-height:1.5}
 
 .excitement-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-bottom:48px}
 .exc-card{background:linear-gradient(145deg,rgba(253,248,240,.05) 0%,rgba(196,154,60,.06) 100%);border:1px solid rgba(196,154,60,.18);border-radius:var(--radius);cursor:pointer;transition:transform var(--trans),box-shadow var(--trans),border-color var(--trans);position:relative;overflow:hidden}
@@ -300,7 +341,17 @@ body{background:var(--ink);color:var(--cream);font-family:'Lato',sans-serif;font
 
   <div class="divider-ornate"><span>🏔</span></div>
 
-  <div class="section-header" style="margin-bottom:32px">
+  <div class="section-header" style="margin-bottom:24px">
+    <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.2rem)">Resort <em>Comparison</em></h2>
+    <p class="section-desc">Rated for a first-time American family with beginner kids (ages 9 &amp; 11). Tap any name for full details.</p>
+  </div>
+
+  <div class="compare-wrap">
+    <table class="compare-table" id="compare-table"></table>
+  </div>
+  <div class="compare-legend">★ = our recommended picks · Ratings reflect suitability for beginner kids, ease of getting around, and scenery — not overall resort size. Confirm current prices &amp; snow on each official site before booking.</div>
+
+  <div class="section-header" style="margin:48px 0 32px">
     <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.2rem)">Choose Your <em>Base</em></h2>
     <p class="section-desc">All are well-suited to first-timers with strong kids' ski schools. Tap any resort for photos and details.</p>
   </div>
@@ -365,6 +416,8 @@ body{background:var(--ink);color:var(--cream);font-family:'Lato',sans-serif;font
     </div>
     <div class="modal-body">
       <div class="modal-desc" id="m-desc"></div>
+      <div class="modal-links" id="m-links" style="display:none"></div>
+      <div class="modal-staybox" id="m-staybox" style="display:none"></div>
       <div class="modal-highlights" id="m-highlights" style="display:none"><h4>✦ Must-Know</h4><ul id="m-highlights-list"></ul></div>
       <div class="modal-tip" id="m-tip" style="display:none"></div>
     </div>
@@ -466,161 +519,192 @@ var STOPS = [
     wiki:['Tower of London','Crown Jewels of the United Kingdom','White Tower (Tower of London)'],
     desc:'Nearly 1,000 years of royal history in one fortress. The <strong>Crown Jewels</strong> will leave the kids speechless — diamonds and rubies worn by actual kings and queens. Book a <strong>Yeoman Warder (Beefeater) tour</strong> for incredible stories of royal prisoners and the legendary ravens who protect the kingdom.',
     highlights:['Crown Jewels — the most famous gem collection on Earth','Beefeater tours run throughout the day — extremely entertaining','Meet the famous ravens (always at least six)','The White Tower is nearly 1,000 years old — built by William the Conqueror','Walk the medieval battlements over the Thames'],
-    tip:'🕘 <strong>Book online in advance</strong> — saves 45+ min of queuing. Allow 3 hours minimum.' },
+    tip:'🕘 <strong>Book online in advance</strong> — saves 45+ min of queuing. Allow 3 hours minimum.',
+    links:{ buy:'https://www.hrp.org.uk/tower-of-london/visit/tickets-and-prices/', home:'https://www.hrp.org.uk/tower-of-london/' } },
 
   { id:'westminster', name:'Westminster Abbey', city:'London', flag:'🇬🇧', emoji:'⛪',
     tags:['history','must'], date:'Dec 21',
     wiki:['Westminster Abbey'],
     desc:'Every British monarch since <strong>William the Conqueror in 1066</strong> has been crowned here. The soaring Gothic nave, <strong>Poets\' Corner</strong> (Chaucer, Dickens, and others are buried here), and royal tombs make this one of the most history-dense buildings on Earth.',
     highlights:['Coronation spot of every English/British monarch since 1066','Poets\' Corner — graves of Dickens, Chaucer, Hardy','Oldest door in the UK — nearly 1,000 years old','The Chapter House has 13th-century floor tiles'],
-    tip:'⚠️ Closed Sunday mornings for services. Pre-book timed entry. Allow 90 minutes.' },
+    tip:'⚠️ Closed Sunday mornings for services. Pre-book timed entry. Allow 90 minutes.',
+    links:{ buy:'https://tickets.westminster-abbey.org/', home:'https://www.westminster-abbey.org/visit-us/prices-and-entry-times' } },
 
   { id:'buckingham', name:'Buckingham Palace', city:'London', flag:'🇬🇧', emoji:'👑',
     tags:['history','magic'], date:'Dec 21',
     wiki:['Buckingham Palace'],
     desc:'The official home of the British monarch since 1837. The famous <strong>Changing of the Guard ceremony</strong> is theatrical and unmistakably British — scarlet-coated soldiers, bearskin hats, and a full marching band. Beautifully decorated at Christmas.',
     highlights:['Changing of the Guard — usually 11am, check online first','The palace has 775 rooms and 40 acres of gardens','The balcony where the royal family waves is iconic','St James\'s Park is right next door'],
-    tip:'📅 Guard ceremony is NOT every day — check the official site. Arrive 30 min early.' },
+    tip:'📅 Guard ceremony is NOT every day — check the official site. Arrive 30 min early.',
+    links:{ buy:'https://www.rct.uk/visit/buckingham-palace', home:'https://www.rct.uk/visit/buckingham-palace' } },
 
   { id:'winterwonderland', name:'Hyde Park Winter Wonderland', city:'London', flag:'🇬🇧', emoji:'🎡',
     tags:['xmas','magic','must'], date:'Dec 21',
     wiki:['Hyde Park Winter Wonderland','Christmas market','Hyde Park, London'],
     desc:'<strong>One of Europe\'s biggest Christmas festivals</strong> transforms Hyde Park into a fairground wonderland. Ice rink, giant Ferris wheel, Santa\'s Grotto, German market huts serving Glühwein and hot chocolate, and dozens of rides. The kids will never stop talking about this.',
     highlights:['The ice rink is spectacular — surrounded by chalets','Giant Ferris wheel with views over London at night','Authentic German market with mulled wine','Santa\'s Grotto for the younger ones','Funfair with thrilling rides for older kids'],
-    tip:'🎟 Free to enter — rides cost extra. <strong>Book the ice rink 48hrs ahead.</strong> Go after 4pm for the lights.' },
+    tip:'🎟 Free to enter — rides cost extra. <strong>Book the ice rink 48hrs ahead.</strong> Go after 4pm for the lights.',
+    links:{ buy:'https://hydeparkwinterwonderland.com/tickets/', home:'https://hydeparkwinterwonderland.com/' } },
 
   { id:'boroughmarket', name:'Borough Market at Christmas', city:'London', flag:'🇬🇧', emoji:'🧀',
     tags:['food','xmas','magic'], date:'Dec 20',
     wiki:['Borough Market'],
     desc:'London\'s most famous food market is transformed at Christmas. Warm up with <strong>mulled wine, hot chocolate, raclette, and sausages</strong>. The covered Victorian market drips with decorations — a brilliant lunch stop after the Tower of London.',
     highlights:['Hot raclette scraped over potatoes — incredible in the cold','Famous mulled wine stalls','Fresh bread, artisan cheese, and charcuterie','A true world market of street food','Right next to Southwark Cathedral'],
-    tip:'🕐 Go 12–2pm for the best atmosphere. Busy but moves fast. Cash and card accepted.' },
+    tip:'🕐 Go 12–2pm for the best atmosphere. Busy but moves fast. Cash and card accepted.',
+    links:{ buy:'https://boroughmarket.org.uk/visit/', home:'https://boroughmarket.org.uk/' } },
 
   { id:'colmar', name:'Colmar Christmas Markets', city:'Colmar, Alsace', flag:'🇫🇷', emoji:'🕯',
     tags:['xmas','magic','must','food'], date:'Dec 23–26',
     wiki:['Colmar','Christmas market'],
     desc:'One of the most <strong>magical Christmas towns in Europe</strong>. Colmar\'s medieval half-timbered houses, draped in garlands and glowing with candles, look lifted from a storybook. The <strong>"Little Venice" canal district</strong> is otherworldly at night. Six themed Christmas villages spread across different squares.',
     highlights:['Six distinct Christmas market villages — each themed','Little Venice canal at night — the most photographed Christmas scene in France','Flammekueche fresh from wood-fired ovens','Handmade ornaments, toys, and local crafts','Kids can collect a stamp from each market','Collégiale Saint-Martin — 800 years old'],
-    tip:'🌙 Go at dusk or after dark for full magic. Weekday evenings are quieter. Warm waterproof boots!' },
+    tip:'🌙 Go at dusk or after dark for full magic. Weekday evenings are quieter. Warm waterproof boots!',
+    links:{ buy:'https://www.noel-colmar.com/en/', home:'https://www.colmar.fr/en' } },
 
   { id:'eguisheim', name:'Eguisheim Village', city:'Alsace', flag:'🇫🇷', emoji:'🏡',
     tags:['xmas','magic','history'], date:'Dec 24',
     wiki:['Eguisheim'],
     desc:'Repeatedly voted <strong>France\'s Most Beautiful Village</strong>, Eguisheim is a perfectly circular medieval village — concentric streets wrapping around a 13th-century castle. Every house is decorated for Christmas. Visitors say it feels like walking into <strong>Beauty and the Beast</strong>.',
     highlights:['The only perfectly circular village in France','Every house decorated for Christmas — it\'s a competition','The 13th-century castle at the heart of the village','Amazing local pottery and Alsatian wine','Far less crowded than Riquewihr — more intimate'],
-    tip:'🚗 15 minutes from Colmar by taxi. Arrive mid-morning on weekdays. Park outside the village walls.' },
+    tip:'🚗 15 minutes from Colmar by taxi. Arrive mid-morning on weekdays. Park outside the village walls.',
+    links:{ buy:'https://www.tourisme-eguisheim.fr/en/', home:'https://www.ot-eguisheim.fr/' } },
 
   { id:'riquewihr', name:'Riquewihr', city:'Alsace', flag:'🇫🇷', emoji:'🏘',
     tags:['xmas','history','magic'], date:'Dec 24',
     wiki:['Riquewihr'],
     desc:'One of the best-preserved medieval villages in all of France, <strong>virtually unchanged since the 14th century</strong>. The Christmas market fills its single cobbled main street — decorated half-timbered houses, ancient towers, and artisan stalls selling handmade toys.',
     highlights:['The village looks exactly as it did in the 1300s','Medieval town walls and gate towers still intact','Artisan Christmas stalls with handmade toys','The Dolder — a medieval watchtower you can climb','Famous for Riesling wine'],
-    tip:'🚗 30 minutes from Colmar. Very crowded on weekends — go weekday mornings. Allow 2 hours.' },
+    tip:'🚗 30 minutes from Colmar. Very crowded on weekends — go weekday mornings. Allow 2 hours.',
+    links:{ buy:'https://www.ribeauville-riquewihr.com/en/', home:'https://www.ribeauville-riquewihr.com/en/' } },
 
   { id:'strasbourg', name:'Strasbourg Christmas Market', city:'Strasbourg, Alsace', flag:'🇫🇷', emoji:'🌟',
     tags:['xmas','history','must'], date:'Dec 25',
     wiki:['Christkindelsmärik, Strasbourg','Strasbourg Cathedral','Strasbourg'],
     desc:'The <strong>world\'s oldest Christmas market, established in 1570</strong>. The Christkindelsmärik in Place Kléber surrounds a towering illuminated tree. At its heart stands the extraordinary <strong>Strasbourg Cathedral</strong> — a Gothic masterpiece with a famous astronomical clock whose figures move every hour.',
     highlights:['World\'s oldest Christmas market — running since 1570','Strasbourg Cathedral: 142m Gothic spire visible for miles','The Astronomical Clock — mechanical figures since 1574','Over 300 market stalls across the city','Giant Christmas tree at Place Kléber','Half-timbered Petite France quarter nearby'],
-    tip:'🚂 45 minutes from Colmar by car or train. The cathedral clock show is at noon — arrive early.' },
+    tip:'🚂 45 minutes from Colmar by car or train. The cathedral clock show is at noon — arrive early.',
+    links:{ buy:'https://noel.strasbourg.eu/en/', home:'https://www.visitstrasbourg.fr/en/' } },
 
   { id:'notredame', name:'Notre-Dame Cathedral', city:'Paris', flag:'🇫🇷', emoji:'⛩',
     tags:['history','art','must'], date:'Dec 26',
     wiki:['Notre-Dame de Paris'],
     desc:'A <strong>once-in-a-generation moment</strong>: Notre-Dame reopened in December 2024 after the 2019 fire. The restoration has made the interior <strong>more luminous than ever</strong>. Standing here, 850 years of history surround you on Île de la Cité, the original heart of Paris.',
     highlights:['Just restored after the 2019 fire — more stunning than ever','Construction began in 1163 — took over 200 years','The rose windows are among the finest stained glass anywhere','The famous gargoyles look out over Paris','Sits on Île de la Cité — the birthplace of Paris'],
-    tip:'🎟 <strong>Pre-book timed entry</strong> — slots sell out weeks ahead. Free entry, donations welcome.' },
+    tip:'🎟 <strong>Pre-book timed entry</strong> — slots sell out weeks ahead. Free entry, donations welcome.',
+    links:{ buy:'https://www.notredamedeparis.fr/en/visit/book-a-time-slot/', home:'https://www.notredamedeparis.fr/en/' } },
 
   { id:'sainte-chapelle', name:'Sainte-Chapelle', city:'Paris', flag:'🇫🇷', emoji:'🪟',
     tags:['history','art','must'], date:'Dec 26',
     wiki:['Sainte-Chapelle'],
     desc:'Built in 1248, this royal chapel is perhaps <strong>the most beautiful interior in Europe</strong>. The upper chapel is almost entirely <strong>15 floor-to-ceiling stained glass windows</strong> depicting 1,113 Bible scenes in jewel colours. Visitors literally gasp at the top of the spiral staircase.',
     highlights:['1,113 biblical scenes across 15 windows of stained glass','Built in just 6 years — a medieval marvel','Built to house the Crown of Thorns','On sunny winter days, the light show is indescribable','Just a 5-minute walk from Notre-Dame'],
-    tip:'⏰ <strong>Go on a sunny morning</strong> — the light through the windows is magical. Book online to skip the queue.' },
+    tip:'⏰ <strong>Go on a sunny morning</strong> — the light through the windows is magical. Book online to skip the queue.',
+    links:{ buy:'https://www.sainte-chapelle.fr/en', home:'https://www.sainte-chapelle.fr/en' } },
 
   { id:'louvre', name:'The Louvre Museum', city:'Paris', flag:'🇫🇷', emoji:'🔺',
     tags:['art','history','must'], date:'Dec 27',
     wiki:['Louvre','Mona Lisa','Venus de Milo'],
     desc:'The world\'s largest art museum holds <strong>35,000 years of human civilisation</strong>. Don\'t try to see everything — make a plan. See the <strong>Mona Lisa</strong>, the <strong>Venus de Milo</strong>, the <strong>Winged Victory</strong>, and the Egyptian wing — kids go wild for the actual mummies.',
     highlights:['Mona Lisa — smaller than you expect, but the room is electric','Venus de Milo — 2,000 years old, still breathtaking','Winged Victory — at the top of the grand staircase','Egyptian Antiquities — real mummies and ancient artefacts','The glass Pyramid is a masterpiece itself'],
-    tip:'📅 Closed Tuesdays. Open Wed &amp; Fri until 9pm. Enter via the Métro entrance for shorter queues.' },
+    tip:'📅 Closed Tuesdays. Open Wed &amp; Fri until 9pm. Enter via the Métro entrance for shorter queues.',
+    links:{ buy:'https://ticket.louvre.fr/en', home:'https://www.louvre.fr/en' } },
 
   { id:'eiffel', name:'Eiffel Tower', city:'Paris', flag:'🇫🇷', emoji:'🗼',
     tags:['magic','must','history'], date:'Dec 27',
     wiki:['Eiffel Tower'],
     desc:'Book the <strong>summit tickets</strong> in advance — Paris from 300m at dusk is life-changing. Take the stairs to the 2nd floor, then the elevator up. After dark, the tower <strong>sparkles with thousands of golden lights every hour</strong> — pure magic.',
     highlights:['The nightly sparkle show — every hour after dark','Take stairs to 2nd floor (great fun), elevator to summit','Paris from 300m on a clear winter evening','Built in just 2 years for the 1889 World\'s Fair','The Champ de Mars below is beautiful at night'],
-    tip:'🎟 <strong>Book summit tickets 3–4 weeks ahead.</strong> Go at dusk for both day and night views.' },
+    tip:'🎟 <strong>Book summit tickets 3–4 weeks ahead.</strong> Go at dusk for both day and night views.',
+    links:{ buy:'https://ticket.toureiffel.paris/en', home:'https://www.toureiffel.paris/en' } },
 
   { id:'versailles', name:'Palace of Versailles', city:'Versailles', flag:'🇫🇷', emoji:'🌹',
     tags:['history','art','must'], date:'Dec 28',
     wiki:['Palace of Versailles','Hall of Mirrors'],
     desc:'The most <strong>opulent palace ever built</strong>, home to Louis XIV — the Sun King. The <strong>Hall of Mirrors</strong> (73 metres of gold and glass) is astounding. The formal gardens extend for miles. In winter there are far fewer tourists.',
     highlights:['The Hall of Mirrors — 73 metres of gilded glass','Built to contain the entire French court — 20,000 people','Formal gardens (free to walk) designed by Le Nôtre','Marie Antoinette\'s personal hamlet','Site of the signing of the Treaty of Versailles (1919)'],
-    tip:'📅 <strong>Closed Mondays.</strong> Pre-book a timed slot. Take RER C from Paris (~35 min). Allow a full day.' },
+    tip:'📅 <strong>Closed Mondays.</strong> Pre-book a timed slot. Take RER C from Paris (~35 min). Allow a full day.',
+    links:{ buy:'https://ticket.chateauversailles.fr/en/ticketing', home:'https://en.chateauversailles.fr/plan-your-visit/tickets-and-prices' } },
 
   { id:'chatel', name:'Châtel', city:'French Alps', flag:'⛷️', emoji:'🏔',
     tags:['ski','must','magic'], date:'Dec 27–Jan 1',
     wiki:['Châtel, Haute-Savoie','Portes du Soleil'],
     desc:'Our <strong>top pick for first-timers</strong>: quieter and more affordable than its famous neighbours, yet still plugged into the massive <strong>Portes du Soleil</strong> ski area. Gentle beginner slopes sit right in the village, the ESF ski school has English-speaking instructors, and lift passes are the cheapest of all the options. A charming Savoyard village without the inflated prices — ideal for a first family ski trip on a budget. About 1.5 hrs from Colmar.',
     highlights:['Cheapest lift passes of all the options listed','ESF ski school — well-established, English-speaking instructors','Gentle beginner slopes right in the village','Connects to the huge Portes du Soleil area','Accommodation noticeably cheaper than Morzine or Megève'],
-    tip:'🎿 Pre-book ski school the moment you book accommodation — Christmas/New Year week fills weeks ahead. Pre-book gear online to save 10–20%.' },
+    tip:'🎿 Pre-book ski school the moment you book accommodation — Christmas/New Year week fills weeks ahead. Pre-book gear online to save 10–20%.',
+    bestfor:'Best value + shortest drive', drive:'~1.5 hrs',
+    links:{ buy:'https://www.chatel.com/en/winter/buy-your-ski-pass.html', accom:'https://www.chatel.com/en/winter/accommodation.html', home:'https://www.chatel.com/en/' } },
 
   { id:'lesgets', name:'Les Gets', city:'French Alps', flag:'⛷️', emoji:'🎿',
     tags:['ski','magic'], date:'Dec 27–Jan 1',
     wiki:['Les Gets','Portes du Soleil'],
     desc:'A charming village with an <strong>excellent ESF ski school</strong> and very beginner-friendly terrain. Compact and easy to navigate with children, with a strong family reputation and good value by French Alps standards. About 1.5 hrs from Colmar.',
     highlights:['Outstanding kids\' ski school with dedicated beginner areas','Good value by French Alps standards','Compact village — easy to navigate with children','Part of the Portes du Soleil network'],
-    tip:'👶 Ages 9 and 11 pick up skiing fast — full-day group lessons are best value and kids love the social side.' },
+    tip:'👶 Ages 9 and 11 pick up skiing fast — full-day group lessons are best value and kids love the social side.',
+    pick:true, bestfor:'Easiest to navigate, least stress', drive:'~1.5 hrs',
+    links:{ buy:'https://www.lesgets.com/en/winter/ski-pass/', accom:'https://www.lesgets.com/en/accommodation/', home:'https://www.lesgets.com/en/' } },
 
   { id:'morzine', name:'Morzine', city:'French Alps', flag:'⛷️', emoji:'🏂',
     tags:['ski','magic'], date:'Dec 27–Jan 1',
     wiki:['Morzine','Portes du Soleil'],
     desc:'A lively, family-friendly resort connecting to the huge <strong>Portes du Soleil</strong> area. Good value, great atmosphere, and a strong ski school. Very popular with British families, so English-speaking instructors are easy to find. About 1.5 hrs from Colmar.',
     highlights:['Very popular with British families — easy to find English-speaking instructors','Wide variety of accommodation price points','Excellent après for adults once kids are in bed','Big connected ski area to grow into'],
-    tip:'🧤 Rent everything for a first trip — boots, skis, poles, helmets. Only worth buying: good (non-cotton) ski socks.' },
+    tip:'🧤 Rent everything for a first trip — boots, skis, poles, helmets. Only worth buying: good (non-cotton) ski socks.',
+    bestfor:'Lively, great for English-speaking families', drive:'~1.5 hrs',
+    links:{ buy:'https://en.morzine-avoriaz.com/ski-passes/', accom:'https://en.morzine-avoriaz.com/accommodation/', home:'https://en.morzine-avoriaz.com/' } },
 
   { id:'megeve', name:'Megève', city:'French Alps', flag:'⛷️', emoji:'⛷️',
     tags:['ski','magic','must'], date:'Dec 27–Jan 1',
     wiki:['Megève'],
     desc:'A gorgeous, upscale village with <strong>excellent beginner slopes</strong> and an extraordinary Christmas atmosphere — arguably the most festive village base of all the options. The luxury reputation is real, so budget for accommodation carefully, but cheaper options exist on the outskirts. About 1.5 hrs from Colmar.',
     highlights:['Exceptional Christmas market and village atmosphere','Great beginner terrain despite the luxury reputation','Budget accommodation options do exist on the outskirts','One of the most beautiful village bases in the Alps'],
-    tip:'💶 Self-catering saves a lot — an apartment with a kitchen for breakfasts and packed lunches beats eating out every meal.' },
+    tip:'💶 Self-catering saves a lot — an apartment with a kitchen for breakfasts and packed lunches beats eating out every meal.',
+    bestfor:'Most beautiful French village (upscale)', drive:'~1.5 hrs',
+    links:{ buy:'https://www.megeve.com/en/winter/ski-area/ski-pass/', accom:'https://www.megeve.com/en/prepare-my-stay/accommodation/', home:'https://www.megeve.com/en/' } },
 
   { id:'laax', name:'Laax / Flims', city:'Swiss Alps', flag:'⛷️', emoji:'🏔',
     tags:['ski','must','magic'], date:'Dec 27–Jan 1',
     wiki:['Laax','Flims'],
     desc:'Probably the <strong>best all-round Swiss option</strong> for the group: a renowned ski school, long gentle beginner runs, modern lifts, and a less pretentious vibe than Verbier or Zermatt. The <strong>Snowli Kids Club</strong> is one of Switzerland\'s best children\'s programmes. Less expensive than the Swiss celebrity resorts. About 2 hrs from Colmar via Basel.',
     highlights:['Snowli Kids Club — one of Switzerland\'s best children\'s programmes','Dedicated beginner zones away from fast traffic','More affordable than Verbier / St. Moritz / Zermatt','Modern, well-run resort infrastructure'],
-    tip:'🌨️ Higher Swiss resorts have more reliable late-December snow. Swiss options add roughly €300–500 to the budget vs. Châtel.' },
+    tip:'🌨️ Higher Swiss resorts have more reliable late-December snow. Swiss options add roughly €300–500 to the budget vs. Châtel.',
+    bestfor:'Best modern resort + magical kids\' school', drive:'~2 hrs',
+    links:{ buy:'https://shop.laax.com/en/tickets', accom:'https://www.laax.com/en/book/accommodation/', home:'https://www.laax.com/en/' } },
 
   { id:'engelberg', name:'Engelberg', city:'Swiss Alps', flag:'⛷️', emoji:'🎿',
     tags:['ski','magic'], date:'Dec 27–Jan 1',
     wiki:['Engelberg'],
     desc:'Underrated and less touristy than its Swiss counterparts. Good beginner areas, a solid ski school, more affordable than the big names, and a beautiful <strong>monastery village</strong> at its base. High-altitude glacier skiing means reliable snow. About 2 hrs from Colmar.',
     highlights:['Less crowded than bigger Swiss resorts','Good value by Swiss standards','Reliable snow — high-altitude glacier skiing','Beautiful monastery village at the base'],
-    tip:'🚗 Driving from Colmar is much cheaper than transfers — hire a large enough vehicle in Basel and check it\'s cleared for Alpine driving.' },
+    tip:'🚗 Driving from Colmar is much cheaper than transfers — hire a large enough vehicle in Basel and check it\'s cleared for Alpine driving.',
+    bestfor:'Quiet, reliable snow, good value', drive:'~2 hrs',
+    links:{ buy:'https://www.titlis.ch/en/tickets-prices', accom:'https://www.engelberg.ch/en/accommodation/', home:'https://www.engelberg.ch/en/' } },
 
   { id:'saasfee', name:'Saas-Fee', city:'Swiss Alps', flag:'⛷️', emoji:'🏂',
     tags:['ski','magic','must'], date:'Dec 27–Jan 1',
     wiki:['Saas-Fee'],
     desc:'A <strong>car-free village</strong> where kids can roam freely with no traffic stress — exceptional with young children. Glacier skiing means near-guaranteed snow, and the ski school tradition is strong. A beautiful, safe setting. About 2 hrs from Colmar.',
     highlights:['No cars in the village — exceptional with young children','Glacier ensures good snow conditions in late December','Strong international ski school','Dramatic high-mountain setting'],
-    tip:'🌨️ Glacier resorts like Saas-Fee offer the most snow security if you\'re worried about conditions.' },
+    tip:'🌨️ Glacier resorts like Saas-Fee offer the most snow security if you\'re worried about conditions.',
+    pick:true, bestfor:'Top pick — beautiful, car-free, great for kids', drive:'~2 hrs',
+    links:{ buy:'https://www.saas-fee.ch/en/ski-pass', accom:'https://www.saas-fee.ch/en/accommodation', home:'https://www.saas-fee.ch/en/' } },
 
   { id:'wengen', name:'Wengen', city:'Swiss Alps', flag:'⛷️', emoji:'🚠',
     tags:['ski','magic','must'], date:'Dec 27–Jan 1',
     wiki:['Wengen','Jungfrau'],
     desc:'Car-free, classic Swiss charm with iconic <strong>Jungfrau</strong> views — the Eiger, Mönch, and Jungfrau tower over the village. A magical setting that edges pricier, but worth it if the classic Swiss experience is the priority. About 2.5 hrs from Colmar.',
     highlights:['Utterly spectacular scenery — the Eiger, Mönch, and Jungfrau','Car-free village, very safe and relaxed with kids','Great family ski school tradition','Reached by mountain railway — an adventure in itself'],
-    tip:'🚠 Wengen is reached by cog railway (no car access) — factor the train connection into your arrival day.' },
+    tip:'🚠 Wengen is reached by cog railway (no car access) — factor the train connection into your arrival day.',
+    bestfor:'Most spectacular scenery (farther + pricier)', drive:'~2.5 hrs',
+    links:{ buy:'https://www.jungfrau.ch/en-gb/ski/ski-tickets/', accom:'https://www.wengen.swiss/en/accommodation', home:'https://www.wengen.swiss/en/' } },
 
   { id:'orsay', name:'Musee d Orsay', city:'Paris', flag:'🇫🇷', emoji:'🎨',
     tags:['art','history'], date:'Dec 28',
     wiki:['Musée d\'Orsay'],
     desc:'Housed in a breathtaking <strong>1900 Beaux-Arts railway station</strong>, this is arguably the most beautiful museum in the world — and far less overwhelming than the Louvre. Home to the world\'s greatest Impressionist collection: <strong>Monet, Van Gogh, Renoir, Degas</strong>.',
     highlights:['Van Gogh self-portraits — extraordinary up close','Monet\'s series paintings — light changing through time','Degas\'s Little Dancer sculpture','The iconic giant clock — a perfect photo','Far less crowded than the Louvre'],
-    tip:'📅 Closed Mondays. Open Thursday until 9:45pm. Afternoons are quieter. Under-18s free.' }
+    tip:'📅 Closed Mondays. Open Thursday until 9:45pm. Afternoons are quieter. Under-18s free.',
+    links:{ buy:'https://billetterie.musee-orsay.fr/en-GB/home', home:'https://www.musee-orsay.fr/en' } }
 ];
 
 var ITIN = {
@@ -665,7 +749,114 @@ var ALPS_RESORTS = {
   swiss:  ['laax','engelberg','saasfee','wengen']
 };
 
+/* Comparison ratings (1–5) for a first-time family with beginner kids.
+   beginner = how gentle/suited the learning terrain is
+   easy     = how easy the village is to navigate with kids
+   beauty   = scenery / village charm
+   kids     = strength of kids' ski school & child-friendliness */
+var ALPS_RATINGS = {
+  chatel:    { beginner:4, easy:3, beauty:3, kids:4 },
+  lesgets:   { beginner:5, easy:5, beauty:3, kids:5 },
+  morzine:   { beginner:4, easy:3, beauty:3, kids:4 },
+  megeve:    { beginner:4, easy:3, beauty:5, kids:4 },
+  laax:      { beginner:5, easy:4, beauty:4, kids:5 },
+  engelberg: { beginner:3, easy:3, beauty:4, kids:3 },
+  saasfee:   { beginner:5, easy:5, beauty:5, kids:5 },
+  wengen:    { beginner:4, easy:4, beauty:5, kids:4 }
+};
+
 function getStop(id){ for(var i=0;i<STOPS.length;i++){ if(STOPS[i].id===id) return STOPS[i]; } return null; }
+
+/* ════════════════════════════════════════════════════
+   ACCOMMODATION LINKS (Vrbo) — pre-loaded with dates
+   Each stop maps to a search location + check-in/out dates
+   drawn from the itinerary. We build a Vrbo keyword search
+   URL with date params in the format Vrbo currently uses.
+   If the date params are ever ignored, the link still lands
+   on the correct town's listings.
+════════════════════════════════════════════════════ */
+var STAY = {
+  // London leg: Dec 20–23, 2025
+  london:  { q:'London, England, United Kingdom', in:'2025-12-20', out:'2025-12-23' },
+  // Alsace base (Colmar) for the markets + village day-trips: Dec 23–27, 2025
+  alsace:  { q:'Colmar, France', in:'2025-12-23', out:'2025-12-27' },
+  // Paris add-ons keep Paris dates if used: Dec 26–28, 2025
+  paris:   { q:'Paris, France', in:'2025-12-26', out:'2025-12-28' },
+  // Alps leg: Dec 27, 2025 – Jan 1, 2026 (resort-specific town set per stop)
+  alps:    { in:'2025-12-27', out:'2026-01-01' }
+};
+
+/* which STAY profile (and, for alps, which town) each stop uses */
+function stayFor(stop){
+  var c = stop.city || '';
+  if(c.indexOf('London')>-1) return { q:STAY.london.q, in:STAY.london.in, out:STAY.london.out };
+  if(c.indexOf('Versailles')>-1 || c.indexOf('Paris')>-1) return { q:STAY.paris.q, in:STAY.paris.in, out:STAY.paris.out };
+  if(c.indexOf('Alps')>-1){
+    // resort town name = the stop name, searched in the right country
+    var country = (c.indexOf('Swiss')>-1) ? 'Switzerland' : 'France';
+    return { q:stop.name.replace(' / ',' ')+', '+country, in:STAY.alps.in, out:STAY.alps.out };
+  }
+  // everything in Alsace (Colmar, Strasbourg, villages) → stay in Colmar
+  return { q:STAY.alsace.q, in:STAY.alsace.in, out:STAY.alsace.out };
+}
+
+/* Build an Airbnb search URL with location + dates pre-applied.
+   Airbnb puts the location in the URL path (hyphenated) and the
+   dates/guests as query params — a stable, well-documented format. */
+function airbnbURL(stay){
+  var slug = encodeURIComponent(stay.q.replace(/,/g,'').replace(/\s+/g,'-'));
+  var p = [
+    'checkin=' + stay.in,
+    'checkout=' + stay.out,
+    'adults=4',
+    'children=2'
+  ];
+  return 'https://www.airbnb.com/s/' + slug + '/homes?' + p.join('&');
+}
+
+/* Friendly date label e.g. "Dec 20–23" or "Dec 27 – Jan 1" */
+function stayDateLabel(stay){
+  function fmt(iso){
+    var m=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var d=iso.split('-'); return m[parseInt(d[1],10)-1]+' '+parseInt(d[2],10);
+  }
+  return fmt(stay.in)+' – '+fmt(stay.out);
+}
+
+/* Full date e.g. "Sat, Dec 20, 2025" */
+function fullDate(iso){
+  var m=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var wd=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var p=iso.split('-');
+  var dt=new Date(parseInt(p[0],10), parseInt(p[1],10)-1, parseInt(p[2],10));
+  return wd[dt.getDay()]+', '+m[parseInt(p[1],10)-1]+' '+parseInt(p[2],10)+', '+p[0];
+}
+
+/* Copy the Airbnb URL to the clipboard with graceful fallback. */
+function copyStay(btn, encodedURL){
+  var url=decodeURIComponent(encodedURL);
+  var done=function(){
+    var old=btn.textContent;
+    btn.textContent='✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(function(){ btn.textContent=old; btn.classList.remove('copied'); }, 1800);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(function(){ legacyCopy(url, done); });
+  } else {
+    legacyCopy(url, done);
+  }
+}
+function legacyCopy(text, cb){
+  try{
+    var ta=document.createElement('textarea');
+    ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    if(cb) cb();
+  }catch(e){ /* no-op */ }
+}
 
 /* ---- image fallback (no inline strings, all via data attributes) ---- */
 function imgFallback(el){
@@ -827,19 +1018,54 @@ function renderResortGrid(gridId, ids){
   var html='';
   for(var i=0;i<ids.length;i++){
     var s=getStop(ids[i]); if(!s) continue;
-    html += '<div class="stop-card" onclick="openModal(\''+s.id+'\')">'+
+    var badge = s.pick ? '<span class="pick-badge">★ Recommended</span>' : '';
+    var bf = s.bestfor ? '<div class="card-bestfor">✦ '+s.bestfor+'</div>' : '';
+    html += '<div class="stop-card'+(s.pick?' is-pick':'')+'" onclick="openModal(\''+s.id+'\')" style="position:relative">'+
+      badge+
       cardImage(s)+
       '<div class="stop-card-pad"><span class="stop-card-emoji">'+s.emoji+'</span>'+
       '<div class="stop-card-name">'+s.name+'</div>'+
       '<div class="stop-card-city">'+s.city+'</div>'+
       '<div class="stop-card-desc">'+stripTags(s.desc).substring(0,110)+'…</div>'+
-      '<div class="stop-tags">'+renderTags(s.tags)+'</div></div></div>';
+      '<div class="stop-tags">'+renderTags(s.tags)+'</div>'+
+      bf+'</div></div>';
   }
   document.getElementById(gridId).innerHTML=html;
 }
 function renderAlpsResorts(){
   renderResortGrid('alps-france-grid', ALPS_RESORTS.france);
   renderResortGrid('alps-swiss-grid', ALPS_RESORTS.swiss);
+  renderCompareTable();
+}
+
+/* star rating cell, e.g. ●●●●○ */
+function rateCell(n){
+  var s='<span class="ct-rate">';
+  for(var i=1;i<=5;i++){ s += '<span class="'+(i<=n?'on':'off')+'">●</span>'; }
+  return s+'</span>';
+}
+
+function renderCompareTable(){
+  var ids = ALPS_RESORTS.france.concat(ALPS_RESORTS.swiss);
+  var html = '<thead><tr>'+
+    '<th>Resort</th><th>Beginner<br>terrain</th><th>Easy to<br>get around</th>'+
+    '<th>Beauty</th><th>Kids\'<br>school</th><th>Drive</th><th>Best for</th>'+
+    '</tr></thead><tbody>';
+  for(var i=0;i<ids.length;i++){
+    var s=getStop(ids[i]); if(!s) continue;
+    var r=ALPS_RATINGS[ids[i]]||{};
+    html += '<tr class="'+(s.pick?'pick-row':'')+'">'+
+      '<td><span class="ct-name" onclick="openModal(\''+s.id+'\')"><span class="ct-flag">'+(s.city.indexOf('Swiss')>-1?'🇨🇭':'🇫🇷')+'</span>'+s.name+(s.pick?'<span class="ct-pick-star">★</span>':'')+'</span></td>'+
+      '<td>'+rateCell(r.beginner)+'</td>'+
+      '<td>'+rateCell(r.easy)+'</td>'+
+      '<td>'+rateCell(r.beauty)+'</td>'+
+      '<td>'+rateCell(r.kids)+'</td>'+
+      '<td style="white-space:nowrap">'+(s.drive||'')+'</td>'+
+      '<td style="font-style:italic;color:rgba(253,248,240,.6)">'+(s.bestfor||'')+'</td>'+
+      '</tr>';
+  }
+  html += '</tbody>';
+  document.getElementById('compare-table').innerHTML=html;
 }
 
 /* ---- resort vote ---- */
@@ -921,7 +1147,36 @@ function openModal(id){
   document.getElementById('m-city').textContent=s.flag+' '+s.city+' · '+s.date;
   document.getElementById('m-name').textContent=s.name;
   document.getElementById('m-tags').innerHTML=renderTags(s.tags);
-  document.getElementById('m-desc').innerHTML=s.desc;
+  document.getElementById('m-desc').innerHTML = (s.bestfor ? '<div class="modal-bestfor">✦ '+s.bestfor+'</div>' : '') + s.desc;
+  // booking / info links
+  var linksDiv=document.getElementById('m-links');
+  var html='';
+  if(s.links){
+    var isSki = s.tags.indexOf('ski')>-1;
+    if(s.links.buy) html += '<a class="modal-link primary" href="'+s.links.buy+'" target="_blank" rel="noopener noreferrer"><span class="ml-icon">'+(isSki?'🎿':'🎟')+'</span> '+(isSki?'Lift Tickets':'Buy Tickets')+'</a>';
+    if(s.links.accom) html += '<a class="modal-link accom" href="'+s.links.accom+'" target="_blank" rel="noopener noreferrer"><span class="ml-icon">🎿</span> Resort Lodging</a>';
+    if(s.links.home) html += '<a class="modal-link secondary" href="'+s.links.home+'" target="_blank" rel="noopener noreferrer"><span class="ml-icon">🌐</span> Official Site</a>';
+  }
+  // dated Airbnb accommodation search for this stop
+  var stay = stayFor(s);
+  var aURL = airbnbURL(stay);
+  html += '<a class="modal-link stay" href="'+aURL+'" target="_blank" rel="noopener noreferrer"><span class="ml-icon">🏨</span> Airbnb · '+stayDateLabel(stay)+'</a>';
+  linksDiv.innerHTML=html;
+  linksDiv.style.display = html ? 'flex' : 'none';
+
+  // accommodation detail block — shows exact dates + copy button as a
+  // fallback, since some browsers strip date params on the click-through.
+  var stayBox = document.getElementById('m-staybox');
+  stayBox.innerHTML =
+    '<div class="stay-row"><span class="stay-k">📍 Where</span><span class="stay-v">'+esc(stay.q)+'</span></div>'+
+    '<div class="stay-row"><span class="stay-k">📅 Check-in</span><span class="stay-v">'+fullDate(stay.in)+'</span></div>'+
+    '<div class="stay-row"><span class="stay-k">📅 Check-out</span><span class="stay-v">'+fullDate(stay.out)+'</span></div>'+
+    '<div class="stay-row"><span class="stay-k">👨‍👩‍👧‍👦 Guests</span><span class="stay-v">4 adults · 2 children</span></div>'+
+    '<div class="stay-actions">'+
+      '<button class="stay-copy" onclick="copyStay(this,\''+encodeURIComponent(aURL)+'\')">📋 Copy Airbnb link with dates</button>'+
+      '<span class="stay-hint">If the dates don\'t carry over, paste this link into a new browser tab.</span>'+
+    '</div>';
+  stayBox.style.display='block';
   var hlDiv=document.getElementById('m-highlights'), hlList=document.getElementById('m-highlights-list');
   if(s.highlights&&s.highlights.length){
     var lis='';
