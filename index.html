@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Christmas Adventure — Family Trip 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#120e08; --ink-mid:#1e1710; --cream:#fdf8f0; --parchment:#f2e8d5;
+  --gold:#c49a3c; --gold-lt:#dbb96a; --gold-dk:#8a6820;
+  --crimson:#9b2020; --silver:#8fa3b4;
+  --shadow-hover:0 12px 50px rgba(0,0,0,.6);
+  --radius:3px; --trans:.25s ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:'Lato',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden;min-height:100vh}
+
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(196,154,60,.07) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(26,45,78,.3) 0%,transparent 60%),linear-gradient(160deg,#0c0a05 0%,#120e08 40%,#0e1218 100%)}
+.stars-layer{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(1px 1px at 8% 12%,rgba(255,255,255,.8) 0%,transparent 100%),radial-gradient(1px 1px at 22% 6%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 37% 20%,rgba(255,255,255,.7) 0%,transparent 100%),radial-gradient(1px 1px at 51% 4%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 67% 16%,rgba(255,255,255,.6) 0%,transparent 100%),radial-gradient(1.5px 1.5px at 82% 8%,rgba(255,255,255,.8) 0%,transparent 100%),radial-gradient(1px 1px at 94% 28%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 13% 44%,rgba(255,255,255,.3) 0%,transparent 100%),radial-gradient(1px 1px at 58% 48%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 76% 40%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 31% 58%,rgba(255,255,255,.3) 0%,transparent 100%),radial-gradient(1px 1px at 4% 72%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 88% 63%,rgba(255,255,255,.3) 0%,transparent 100%),radial-gradient(1px 1px at 45% 78%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 19% 88%,rgba(255,255,255,.3) 0%,transparent 100%),radial-gradient(1px 1px at 63% 85%,rgba(255,255,255,.3) 0%,transparent 100%)}
+
+.snow-container{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.flake{position:absolute;top:-20px;color:rgba(255,255,255,.55);font-size:10px;animation:snowfall linear infinite;user-select:none}
+@keyframes snowfall{0%{transform:translateY(-20px) translateX(0) rotate(0);opacity:0}5%{opacity:1}95%{opacity:.4}100%{transform:translateY(105vh) translateX(40px) rotate(720deg);opacity:0}}
+
+#app{position:relative;z-index:2}
+
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px 80px;overflow:hidden}
+.hero-bgimg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.22;z-index:0;filter:saturate(.9)}
+.hero-bgimg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,5,.55) 0%,rgba(12,10,5,.88) 100%)}
+.hero>*:not(.hero-bgimg){position:relative;z-index:1}
+.hero::before{content:'';position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(196,154,60,.12) 0%,transparent 65%);pointer-events:none}
+.hero-eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:24px;opacity:.9;animation:fadeUp .8s .2s both}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,10vw,6.5rem);font-weight:900;line-height:1;color:var(--cream);text-shadow:0 0 80px rgba(196,154,60,.35);margin-bottom:16px;animation:fadeUp .8s .35s both}
+.hero-title em{font-style:italic;color:var(--gold-lt);display:block}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,3vw,1.5rem);color:rgba(253,248,240,.6);margin-bottom:48px;letter-spacing:.5px;animation:fadeUp .8s .5s both}
+.route-path{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin-bottom:56px;animation:fadeUp .8s .65s both}
+.route-city{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;letter-spacing:2px;color:var(--cream);background:rgba(196,154,60,.15);border:1px solid rgba(196,154,60,.3);padding:8px 20px;border-radius:30px}
+.route-arrow{color:var(--gold);font-size:18px}
+.hero-scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:3px;color:rgba(196,154,60,.6);animation:pulse 2s ease-in-out infinite;z-index:1}
+@keyframes pulse{0%,100%{opacity:.4;transform:translateX(-50%) translateY(0)}50%{opacity:.9;transform:translateX(-50%) translateY(6px)}}
+
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(12,10,5,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,154,60,.2);padding:0 20px}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:0;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-logo{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--gold);letter-spacing:1px;white-space:nowrap;padding:16px 20px 16px 0;border-right:1px solid rgba(196,154,60,.2);margin-right:8px}
+.nav-btn{display:flex;align-items:center;gap:8px;padding:16px 18px;font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(253,248,240,.5);border:none;background:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:color var(--trans),border-color var(--trans);position:relative;top:1px}
+.nav-btn:hover{color:var(--cream)}
+.nav-btn.active{color:var(--gold-lt);border-bottom-color:var(--gold)}
+.nav-btn .nav-icon{font-size:16px}
+.nav-tag{font-size:9px;font-weight:700;letter-spacing:1px;padding:2px 6px;border-radius:10px;text-transform:uppercase}
+.tag-xmas{background:rgba(192,57,43,.3);color:#e88;border:1px solid rgba(192,57,43,.4)}
+.tag-med{background:rgba(74,44,110,.4);color:#c4a5e0;border:1px solid rgba(74,44,110,.5)}
+.tag-art{background:rgba(26,74,110,.4);color:#7ab8e0;border:1px solid rgba(26,74,110,.5)}
+.tag-ski{background:rgba(143,199,232,.25);color:#add4f0;border:1px solid rgba(143,199,232,.4)}
+
+.page-section{display:none;max-width:1100px;margin:0 auto;padding:60px 20px 100px;animation:fadeUp .5s ease both}
+.page-section.active{display:block}
+
+.section-header{text-align:center;margin-bottom:56px}
+.section-badge{display:inline-block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;padding:6px 20px;border:1px solid rgba(196,154,60,.25);border-radius:30px;background:rgba(196,154,60,.06)}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--cream);line-height:1.15;margin-bottom:16px}
+.section-title em{font-style:italic;color:var(--gold-lt)}
+.section-desc{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:rgba(253,248,240,.6);max-width:600px;margin:0 auto;font-style:italic}
+.divider-ornate{display:flex;align-items:center;gap:16px;margin:48px 0}
+.divider-ornate::before,.divider-ornate::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(196,154,60,.35))}
+.divider-ornate::after{background:linear-gradient(90deg,rgba(196,154,60,.35),transparent)}
+.divider-ornate span{color:var(--gold);font-size:18px}
+
+.dest-block{margin-bottom:64px}
+.dest-label{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid rgba(196,154,60,.2)}
+.dest-flag{font-size:26px}
+.dest-name{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--cream)}
+
+.stops-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.stop-card{background:linear-gradient(135deg,rgba(253,248,240,.04) 0%,rgba(196,154,60,.04) 100%);border:1px solid rgba(196,154,60,.15);border-radius:var(--radius);padding:0 0 22px;cursor:pointer;transition:transform var(--trans),box-shadow var(--trans),border-color var(--trans),background var(--trans);position:relative;overflow:hidden}
+.stop-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:rgba(196,154,60,.35);background:linear-gradient(135deg,rgba(253,248,240,.07) 0%,rgba(196,154,60,.07) 100%)}
+.stop-card-pad{padding:0 22px}
+.stop-card-emoji{font-size:24px;margin:14px 0 8px;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
+.stop-card-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);margin-bottom:6px;line-height:1.25}
+.stop-card-city{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--gold);letter-spacing:1px;margin-bottom:10px}
+.stop-card-desc{font-size:13.5px;color:rgba(253,248,240,.6);line-height:1.6}
+.stop-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.stag{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:20px;border:1px solid}
+.stag-history{color:#d4957a;border-color:rgba(212,149,122,.4);background:rgba(212,149,122,.08)}
+.stag-xmas{color:#7ec89a;border-color:rgba(126,200,154,.4);background:rgba(126,200,154,.08)}
+.stag-magic{color:var(--gold-lt);border-color:rgba(219,185,106,.4);background:rgba(219,185,106,.08)}
+.stag-art{color:#7ab0d4;border-color:rgba(122,176,212,.4);background:rgba(122,176,212,.08)}
+.stag-food{color:#d4b07a;border-color:rgba(212,176,122,.4);background:rgba(212,176,122,.08)}
+.stag-must{background:rgba(196,154,60,.2);color:var(--gold-lt);border-color:rgba(196,154,60,.4)}
+.stag-ski{color:#8fc7e8;border-color:rgba(143,199,232,.4);background:rgba(143,199,232,.08)}
+
+/* thumbnails */
+.card-imgwrap{position:relative;width:100%;height:170px;overflow:hidden;background:linear-gradient(135deg,#1a1510,#0e0a05);border-bottom:1px solid rgba(196,154,60,.12)}
+.card-thumb{width:100%;height:100%;object-fit:cover;display:block}
+.card-count{position:absolute;bottom:8px;right:8px;background:rgba(10,8,4,.7);border:1px solid rgba(196,154,60,.3);border-radius:16px;padding:2px 10px;font-size:10px;letter-spacing:1px;color:rgba(253,248,240,.85)}
+.img-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1e1810,#0e0a05);color:rgba(253,248,240,.35);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;text-align:center;padding:10px}
+.img-fallback .fb-emoji{font-size:38px;opacity:.55}
+
+.timeline{position:relative;padding-left:40px}
+.timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent 0%,rgba(196,154,60,.4) 5%,rgba(196,154,60,.4) 95%,transparent 100%)}
+.tl-day{margin-bottom:36px}
+.tl-day-header{display:flex;align-items:center;gap:14px;margin-bottom:16px;position:relative;flex-wrap:wrap}
+.tl-day-header::before{content:'';position:absolute;left:-34px;width:18px;height:18px;border-radius:50%;background:var(--gold-dk);border:2px solid var(--gold);box-shadow:0 0 10px rgba(196,154,60,.5)}
+.tl-day-num{font-family:'Playfair Display',serif;font-size:11px;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase}
+.tl-day-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--cream)}
+.tl-day-date{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:rgba(253,248,240,.4);margin-left:auto}
+.tl-stops{display:flex;flex-direction:column;gap:10px}
+.tl-stop{background:rgba(253,248,240,.03);border:1px solid rgba(196,154,60,.12);border-radius:var(--radius);padding:12px 16px;cursor:pointer;transition:background var(--trans),border-color var(--trans),transform var(--trans);display:flex;align-items:center;gap:14px}
+.tl-stop:hover{background:rgba(253,248,240,.06);border-color:rgba(196,154,60,.3);transform:translateX(4px)}
+.tl-thumb-wrap{position:relative;width:70px;height:60px;flex-shrink:0;border-radius:var(--radius);overflow:hidden;background:#1a1510;border:1px solid rgba(196,154,60,.15)}
+.tl-thumb{width:100%;height:100%;object-fit:cover;display:block}
+.tl-thumb-wrap .img-fallback{font-size:0}
+.tl-thumb-wrap .img-fallback .fb-emoji{font-size:24px}
+.tl-stop-icon{font-size:20px;flex-shrink:0}
+.tl-stop-name{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--cream);margin-bottom:3px}
+.tl-stop-note{font-size:13px;color:rgba(253,248,240,.5);line-height:1.5}
+.tl-bridge{display:flex;align-items:center;gap:12px;padding:10px 0 24px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--gold)}
+.tl-bridge-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(196,154,60,.3),transparent)}
+
+.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(10,8,4,.85);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:linear-gradient(145deg,#1e1810 0%,#150f08 100%);border:1px solid rgba(196,154,60,.25);border-radius:var(--radius);max-width:640px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:var(--shadow-hover),0 0 0 1px rgba(196,154,60,.1);transform:translateY(20px) scale(.97);transition:transform .3s ease;scrollbar-width:thin;scrollbar-color:rgba(196,154,60,.3) transparent;position:relative}
+.modal-overlay.open .modal{transform:translateY(0) scale(1)}
+.modal-close{position:absolute;top:16px;right:16px;background:rgba(10,8,4,.6);border:1px solid rgba(253,248,240,.2);color:rgba(253,248,240,.85);width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--trans),color var(--trans);z-index:10;backdrop-filter:blur(4px)}
+.modal-close:hover{background:rgba(196,154,60,.3);color:var(--cream)}
+
+.modal-carousel{position:relative;width:100%;aspect-ratio:16/10;background:#0a0805;overflow:hidden}
+.carousel-track{display:flex;height:100%;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.carousel-slide{min-width:100%;height:100%;position:relative}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.carousel-gradient{position:absolute;left:0;right:0;bottom:0;height:50%;background:linear-gradient(180deg,transparent,rgba(10,8,4,.7));pointer-events:none}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(10,8,4,.55);border:1px solid rgba(196,154,60,.4);color:var(--cream);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--trans);z-index:3;backdrop-filter:blur(4px)}
+.carousel-btn:hover{background:rgba(196,154,60,.4)}
+.carousel-btn.prev{left:12px}
+.carousel-btn.next{right:12px}
+.carousel-dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:8px;z-index:3}
+.carousel-dot{width:8px;height:8px;border-radius:50%;background:rgba(253,248,240,.4);border:none;cursor:pointer;transition:background var(--trans),transform var(--trans);padding:0}
+.carousel-dot.active{background:var(--gold);transform:scale(1.3)}
+.carousel-counter{position:absolute;top:12px;left:12px;background:rgba(10,8,4,.6);border:1px solid rgba(196,154,60,.3);border-radius:20px;padding:3px 12px;font-size:11px;font-family:'Lato',sans-serif;letter-spacing:1px;color:rgba(253,248,240,.8);z-index:3;backdrop-filter:blur(4px)}
+
+.modal-hero{padding:28px 32px 24px;border-bottom:1px solid rgba(196,154,60,.12)}
+.modal-emoji{font-size:34px;margin-bottom:12px;display:block}
+.modal-city{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.modal-name{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2rem);font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:12px}
+.modal-tags{display:flex;flex-wrap:wrap;gap:8px}
+.modal-body{padding:28px 32px 32px}
+.modal-desc{font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.75;color:rgba(253,248,240,.8);margin-bottom:24px}
+.modal-desc strong{color:var(--gold-lt);font-weight:600}
+.modal-highlights{background:rgba(196,154,60,.06);border-left:2px solid var(--gold);padding:16px 20px;border-radius:0 var(--radius) var(--radius) 0;margin-bottom:20px}
+.modal-highlights h4{font-family:'Playfair Display',serif;font-size:.9rem;color:var(--gold-lt);margin-bottom:10px;font-weight:700}
+.modal-highlights ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.modal-highlights li{font-size:13.5px;color:rgba(253,248,240,.7);display:flex;align-items:flex-start;gap:8px}
+.modal-highlights li::before{content:'✦';color:var(--gold);font-size:10px;margin-top:3px;flex-shrink:0}
+.modal-tip{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:14px 18px;font-size:13px;color:rgba(253,248,240,.55);line-height:1.6}
+.modal-tip strong{color:var(--silver);font-weight:700}
+
+.excitement-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-bottom:48px}
+.exc-card{background:linear-gradient(145deg,rgba(253,248,240,.05) 0%,rgba(196,154,60,.06) 100%);border:1px solid rgba(196,154,60,.18);border-radius:var(--radius);cursor:pointer;transition:transform var(--trans),box-shadow var(--trans),border-color var(--trans);position:relative;overflow:hidden}
+.exc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);border-color:rgba(196,154,60,.4)}
+.exc-card .card-imgwrap{height:180px}
+.exc-pad{padding:20px 24px 26px;text-align:center}
+.exc-emoji{font-size:32px;display:block;margin-bottom:10px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+.exc-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--cream);margin-bottom:6px;line-height:1.25}
+.exc-city{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--gold);margin-bottom:10px}
+.exc-tease{font-size:13px;color:rgba(253,248,240,.55);line-height:1.55}
+
+.coming-soon{background:rgba(253,248,240,.025);border:2px dashed rgba(196,154,60,.2);border-radius:var(--radius);padding:60px 40px;text-align:center}
+.coming-soon h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:rgba(253,248,240,.4);margin-bottom:12px}
+.coming-soon p{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(253,248,240,.3);font-size:1.05rem}
+
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.info-card{background:rgba(253,248,240,.03);border:1px solid rgba(196,154,60,.15);border-radius:var(--radius);padding:22px}
+.info-card h4{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--gold-lt);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.info-card li{font-size:13.5px;color:rgba(253,248,240,.6);line-height:1.7}
+.info-card ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.info-card li::before{content:'· ';color:var(--gold)}
+
+.vote-section{background:linear-gradient(135deg,rgba(196,154,60,.07) 0%,rgba(253,248,240,.03) 100%);border:1px solid rgba(196,154,60,.2);border-radius:var(--radius);padding:36px;margin-top:48px;text-align:center}
+.vote-section h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--cream);margin-bottom:8px}
+.vote-section p{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(253,248,240,.55);margin-bottom:28px}
+.vote-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:20px}
+.vote-btn{background:rgba(253,248,240,.05);border:1px solid rgba(253,248,240,.15);border-radius:30px;padding:10px 22px;color:rgba(253,248,240,.7);font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;cursor:pointer;transition:all var(--trans);display:flex;align-items:center;gap:8px}
+.vote-btn:hover{background:rgba(196,154,60,.15);border-color:rgba(196,154,60,.4);color:var(--cream)}
+.vote-btn.voted{background:rgba(196,154,60,.2);border-color:var(--gold);color:var(--gold-lt)}
+.vote-count{background:rgba(0,0,0,.3);border-radius:20px;padding:2px 8px;font-size:12px}
+.vote-result{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--gold);min-height:24px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:600px){
+  .stops-grid{grid-template-columns:1fr}
+  .excitement-grid{grid-template-columns:1fr}
+  .modal{max-height:90vh}
+  .modal-hero,.modal-body{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<div id="bg-canvas"></div>
+<div class="stars-layer"></div>
+<div class="snow-container" id="snow"></div>
+
+<div id="app">
+
+<section class="hero" id="top">
+  <div class="hero-bgimg" id="hero-bgimg"></div>
+  <div class="hero-eyebrow">December 2025 · Family Adventure</div>
+  <h1 class="hero-title">Our<br><em>Christmas Journey</em></h1>
+  <p class="hero-sub">Ten magical days across three countries — built for four</p>
+  <div class="route-path">
+    <div class="route-city">🇬🇧 London</div>
+    <div class="route-arrow">→</div>
+    <div class="route-city">✈ Basel</div>
+    <div class="route-arrow">→</div>
+    <div class="route-city">🇫🇷 Alsace</div>
+    <div class="route-arrow">→</div>
+    <div class="route-city">🗼 Paris</div>
+  </div>
+  <div class="hero-scroll-hint">↓ explore below ↓</div>
+</section>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-logo">✦ TRIP 2025</div>
+    <button class="nav-btn active" onclick="showSection('highlights')" id="nav-highlights"><span class="nav-icon">⭐</span> Highlights</button>
+    <button class="nav-btn" onclick="showSection('christmas')" id="nav-christmas"><span class="nav-icon">🎄</span> Christmas Itinerary <span class="nav-tag tag-xmas">HOT</span></button>
+    <button class="nav-btn" onclick="showSection('medieval')" id="nav-medieval"><span class="nav-icon">🏰</span> Medieval &amp; History <span class="nav-tag tag-med">NEW</span></button>
+    <button class="nav-btn" onclick="showSection('art')" id="nav-art"><span class="nav-icon">🎨</span> Art &amp; Culture <span class="nav-tag tag-art">NEW</span></button>
+    <button class="nav-btn" onclick="showSection('alps')" id="nav-alps"><span class="nav-icon">⛷️</span> Ski the Alps <span class="nav-tag tag-ski">OPTIONAL</span></button>
+    <button class="nav-btn" onclick="showSection('allstops')" id="nav-allstops"><span class="nav-icon">📍</span> All Stops</button>
+    <button class="nav-btn" onclick="showSection('practical')" id="nav-practical"><span class="nav-icon">🗺</span> Plan &amp; Tips</button>
+  </div>
+</nav>
+
+<section class="page-section active" id="sec-highlights">
+  <div class="section-header">
+    <div class="section-badge">Must-See Moments</div>
+    <h2 class="section-title">The <em>Top Experiences</em><br>You Won't Believe Are Real</h2>
+    <p class="section-desc">Click any card to see photos and learn more — these are the moments you'll talk about forever.</p>
+  </div>
+  <div class="excitement-grid" id="exc-grid"></div>
+  <div class="vote-section">
+    <h3>✦ Family Vote — What Are You Most Excited For?</h3>
+    <p>Tap your favourite — everyone gets one vote!</p>
+    <div class="vote-grid" id="vote-grid"></div>
+    <div class="vote-result" id="vote-result"></div>
+  </div>
+</section>
+
+<section class="page-section" id="sec-christmas">
+  <div class="section-header">
+    <div class="section-badge" style="border-color:rgba(192,57,43,.4);color:#e88;background:rgba(192,57,43,.07)">🎄 Christmas Itinerary</div>
+    <h2 class="section-title">The <em>Perfect Christmas</em><br>Day-by-Day</h2>
+    <p class="section-desc">Every stop chosen for maximum Christmas magic — markets, lights, traditions, and joy.</p>
+  </div>
+  <div id="christmas-timeline"></div>
+</section>
+
+<section class="page-section" id="sec-medieval">
+  <div class="section-header">
+    <div class="section-badge" style="border-color:rgba(74,44,110,.5);color:#c4a5e0;background:rgba(74,44,110,.08)">🏰 Medieval &amp; History Theme</div>
+    <h2 class="section-title">A <em>Thousand Years</em><br>of History Await</h2>
+    <p class="section-desc">From Norman fortresses to Gothic cathedrals — the ultimate history lover's route.</p>
+  </div>
+  <div id="medieval-timeline"></div>
+  <div class="divider-ornate"><span>⚔</span></div>
+  <div class="coming-soon">
+    <h3>More coming soon…</h3>
+    <p>Add your own medieval stops and we'll build it out — Carcassonne? Mont Saint-Michel? Let us know!</p>
+  </div>
+</section>
+
+<section class="page-section" id="sec-art">
+  <div class="section-header">
+    <div class="section-badge" style="border-color:rgba(26,74,110,.5);color:#7ab8e0;background:rgba(26,74,110,.08)">🎨 Art &amp; Culture Theme</div>
+    <h2 class="section-title">Masterpieces, <em>Cathedrals</em><br>&amp; Living History</h2>
+    <p class="section-desc">Curated for curious minds — world-class art, astonishing architecture, and cultural depth.</p>
+  </div>
+  <div id="art-timeline"></div>
+</section>
+
+<section class="page-section" id="sec-alps">
+  <div class="section-header">
+    <div class="section-badge" style="border-color:rgba(143,199,232,.5);color:#add4f0;background:rgba(143,199,232,.08)">⛷️ Optional Add-On</div>
+    <h2 class="section-title">Swap Paris for<br><em>The Alps</em></h2>
+    <p class="section-desc">Instead of Paris after Colmar, drive straight into the mountains through New Year's Eve — 4 nights, 3.5 ski days, perfect for first-time skiers.</p>
+  </div>
+
+  <div style="background:linear-gradient(135deg,rgba(143,199,232,.1),rgba(196,154,60,.05));border:1px solid rgba(143,199,232,.25);border-radius:var(--radius);padding:24px 28px;margin-bottom:48px">
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;letter-spacing:2px;color:#add4f0;text-transform:uppercase;margin-bottom:10px">The Plan at a Glance</div>
+    <p style="color:rgba(253,248,240,.75);font-size:14.5px;line-height:1.7;margin:0">You're already perfectly positioned in Colmar — the closest French resorts are about <strong style="color:var(--cream)">1.5 hrs away</strong>, with Swiss options up to 2.5 hrs. Pick one base below, arrive Dec 27, and spend the week learning to ski as a family before ringing in the New Year on the mountain. Costs run roughly <strong style="color:var(--cream)">€2,975–3,175</strong> for the group in France (Switzerland adds €300–500).</p>
+  </div>
+
+  <div id="alps-timeline"></div>
+
+  <div class="divider-ornate"><span>🏔</span></div>
+
+  <div class="section-header" style="margin-bottom:32px">
+    <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.2rem)">Choose Your <em>Base</em></h2>
+    <p class="section-desc">All are well-suited to first-timers with strong kids' ski schools. Tap any resort for photos and details.</p>
+  </div>
+
+  <div class="dest-block">
+    <div class="dest-label"><span class="dest-flag">🇫🇷</span><span class="dest-name">French Alps — Closer &amp; Better Value</span></div>
+    <div class="stops-grid" id="alps-france-grid"></div>
+  </div>
+
+  <div class="dest-block">
+    <div class="dest-label"><span class="dest-flag">🇨🇭</span><span class="dest-name">Switzerland — The Alpine Experience</span></div>
+    <div class="stops-grid" id="alps-swiss-grid"></div>
+  </div>
+
+  <div class="vote-section" style="margin-top:32px">
+    <h3>✦ Family Vote — Which Resort?</h3>
+    <p>Tap your pick — everyone gets one vote!</p>
+    <div class="vote-grid" id="resort-vote-grid"></div>
+    <div class="vote-result" id="resort-vote-result"></div>
+  </div>
+</section>
+
+<section class="page-section" id="sec-allstops">
+  <div class="section-header">
+    <div class="section-badge">Complete Explorer</div>
+    <h2 class="section-title">Every <em>Stop</em> on the Map</h2>
+    <p class="section-desc">Browse all places across the entire trip — filter by city or theme.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;justify-content:center" id="filter-bar"></div>
+  <div id="allstops-grid"></div>
+</section>
+
+<section class="page-section" id="sec-practical">
+  <div class="section-header">
+    <div class="section-badge">Essential Planning</div>
+    <h2 class="section-title">Everything You Need<br>to <em>Know</em></h2>
+    <p class="section-desc">Logistics, tips, booking reminders, and family-friendly advice.</p>
+  </div>
+  <div class="info-grid">
+    <div class="info-card"><h4>🎟 Book These NOW</h4><ul><li>Tower of London — sells out Dec weekends</li><li>Notre-Dame — timed entry books weeks ahead</li><li>Sainte-Chapelle — popular at Christmas</li><li>Eiffel Tower summit — 3–4 weeks ahead</li><li>Louvre — timed tickets recommended</li><li>Versailles — book with entry time slot</li><li>Hyde Park Ice Rink — book 48hrs ahead</li></ul></div>
+    <div class="info-card"><h4>✈ Getting There</h4><ul><li>London: fly direct from US to Heathrow</li><li>London → Basel: ~1.5hr flight to BSL</li><li>Basel → Colmar: 45 min taxi or bus</li><li>Colmar → Paris: TGV ~2.5hrs via Strasbourg</li><li>Within Paris: Métro is fast &amp; cheap</li><li>Versailles: RER C train ~35 min</li></ul></div>
+    <div class="info-card"><h4>🌡 Weather to Expect</h4><ul><li>London: 3–8°C, grey but festive</li><li>Alsace: 0–5°C, possible snow ✨</li><li>Paris: 3–7°C, crisp and clear</li><li>Pack: heavy coats, warm boots, gloves</li><li>Tip: hand warmers for market days!</li></ul></div>
+    <div class="info-card"><h4>👧 Kids Ages 9 &amp; 11</h4><ul><li>Perfect ages — old enough to love history</li><li>Young enough to believe in magic</li><li>Give each a small travel journal</li><li>Budget daily "hot chocolate money"</li><li>Colmar: collect a stamp from each market</li><li>Beefeater tour will be a highlight</li></ul></div>
+    <div class="info-card"><h4>🏨 Where to Stay</h4><ul><li>London: South Bank or Westminster</li><li>Colmar: Old Town — book ASAP for Dec</li><li>Try: Hôtel le Maréchal (canal-front)</li><li>Paris: 4th arrondissement (Marais)</li><li>Walking distance to Notre-Dame</li></ul></div>
+    <div class="info-card"><h4>🍽 Food You Must Try</h4><ul><li>London: Borough Market, hot chestnuts</li><li>Alsace: Flammekueche, Bredele, Glühwein</li><li>Alsace: Choucroute, pain d'épices</li><li>Paris: croissants daily, crème brûlée</li><li>Paris: hot chocolate at Angelina</li></ul></div>
+    <div class="info-card"><h4>💶 Money Tips</h4><ul><li>UK uses £GBP, France uses €EUR</li><li>Paris Museum Pass saves on entries</li><li>Under-18s free at many Paris museums</li><li>Christmas markets: mostly free entry</li><li>Carry cash for market stalls</li></ul></div>
+    <div class="info-card"><h4>📸 Best Photo Spots</h4><ul><li>Colmar canal at night — pure magic</li><li>Sainte-Chapelle stained glass</li><li>Eiffel Tower from Trocadéro at dusk</li><li>Tower Bridge from the South Bank</li><li>Versailles Hall of Mirrors</li></ul></div>
+  </div>
+</section>
+
+</div>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal-box">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div id="m-carousel"></div>
+    <div class="modal-hero">
+      <span class="modal-emoji" id="m-emoji"></span>
+      <div class="modal-city" id="m-city"></div>
+      <div class="modal-name" id="m-name"></div>
+      <div class="modal-tags" id="m-tags"></div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-desc" id="m-desc"></div>
+      <div class="modal-highlights" id="m-highlights" style="display:none"><h4>✦ Must-Know</h4><ul id="m-highlights-list"></ul></div>
+      <div class="modal-tip" id="m-tip" style="display:none"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════
+   IMAGE LOADING via Wikipedia Action API (origin=* CORS-safe)
+   For each stop we list Wikipedia article titles. We ask the
+   Action API for the images on each page, then resolve those
+   file titles to real thumbnail URLs in a second batched call.
+   This endpoint explicitly supports cross-origin requests, so
+   it works from inside the artifact sandbox.
+════════════════════════════════════════════════════ */
+var WIKI_API = 'https://en.wikipedia.org/w/api.php';
+
+function apiURL(params){
+  params.format = 'json';
+  params.origin = '*';
+  var q = [];
+  for(var k in params){ if(params.hasOwnProperty(k)){ q.push(encodeURIComponent(k)+'='+encodeURIComponent(params[k])); } }
+  return WIKI_API + '?' + q.join('&');
+}
+
+function looksBad(name){
+  return /\.svg/i.test(name) ||
+    /(icon|logo|symbol|map|flag|coat[_ ]?of[_ ]?arms|locator|wikimedia|commons-logo|edit|ooui|red[_ ]?pog|blue[_ ]?pog|increase|decrease|disambig|question_book|ambox|wiki_letter|loudspeaker|sound|\.ogg|\.oga|\.wav)/i.test(name);
+}
+
+/* Step 1: get the list of image file titles used on a page (in order). */
+function fetchPageImageTitles(title){
+  var url = apiURL({ action:'query', prop:'images', titles:title, imlimit:'30', redirects:'1' });
+  return fetch(url).then(function(r){ return r.ok ? r.json() : null; }).then(function(data){
+    if(!data || !data.query || !data.query.pages) return [];
+    var pages = data.query.pages, titles=[];
+    for(var pid in pages){
+      var imgs = pages[pid].images || [];
+      for(var i=0;i<imgs.length;i++){
+        var t = imgs[i].title; // e.g. "File:Foo.jpg"
+        if(!looksBad(t)) titles.push(t);
+      }
+    }
+    return titles;
+  }).catch(function(){ return []; });
+}
+
+/* Step 2: resolve File: titles to actual thumbnail URLs (batched). */
+function fetchThumbURLs(fileTitles){
+  if(!fileTitles.length) return Promise.resolve({});
+  var url = apiURL({ action:'query', prop:'imageinfo', iiprop:'url', iiurlwidth:'1000', titles:fileTitles.join('|') });
+  return fetch(url).then(function(r){ return r.ok ? r.json() : null; }).then(function(data){
+    var map={};
+    if(data && data.query && data.query.pages){
+      var pages=data.query.pages;
+      for(var pid in pages){
+        var p=pages[pid];
+        if(p.imageinfo && p.imageinfo[0]){
+          var info=p.imageinfo[0];
+          map[p.title] = info.thumburl || info.url;
+        }
+      }
+    }
+    return map;
+  }).catch(function(){ return {}; });
+}
+
+function loadImagesFor(stop){
+  var titles = stop.wiki || [];
+  if(!titles.length){ stop.images=[]; return Promise.resolve(); }
+
+  return Promise.all(titles.map(fetchPageImageTitles)).then(function(lists){
+    // Interleave file titles across the source articles for variety.
+    var fileTitles=[], seen={};
+    var max=0;
+    for(var i=0;i<lists.length;i++){ if(lists[i].length>max) max=lists[i].length; }
+    for(var pos=0; pos<max && fileTitles.length<6; pos++){
+      for(var a=0; a<lists.length && fileTitles.length<6; a++){
+        var t=lists[a][pos];
+        if(t && !seen[t]){ seen[t]=1; fileTitles.push(t); }
+      }
+    }
+    if(!fileTitles.length){ stop.images=[]; return; }
+
+    return fetchThumbURLs(fileTitles).then(function(map){
+      // preserve our interleaved order
+      var urls=[];
+      for(var j=0;j<fileTitles.length;j++){
+        if(map[fileTitles[j]]) urls.push(map[fileTitles[j]]);
+      }
+      stop.images = urls.slice(0,5);
+    });
+  });
+}
+
+var STOPS = [
+  { id:'tower', name:'Tower of London', city:'London', flag:'🇬🇧', emoji:'🏰',
+    tags:['history','must','xmas'], date:'Dec 20',
+    wiki:['Tower of London','Crown Jewels of the United Kingdom','White Tower (Tower of London)'],
+    desc:'Nearly 1,000 years of royal history in one fortress. The <strong>Crown Jewels</strong> will leave the kids speechless — diamonds and rubies worn by actual kings and queens. Book a <strong>Yeoman Warder (Beefeater) tour</strong> for incredible stories of royal prisoners and the legendary ravens who protect the kingdom.',
+    highlights:['Crown Jewels — the most famous gem collection on Earth','Beefeater tours run throughout the day — extremely entertaining','Meet the famous ravens (always at least six)','The White Tower is nearly 1,000 years old — built by William the Conqueror','Walk the medieval battlements over the Thames'],
+    tip:'🕘 <strong>Book online in advance</strong> — saves 45+ min of queuing. Allow 3 hours minimum.' },
+
+  { id:'westminster', name:'Westminster Abbey', city:'London', flag:'🇬🇧', emoji:'⛪',
+    tags:['history','must'], date:'Dec 21',
+    wiki:['Westminster Abbey'],
+    desc:'Every British monarch since <strong>William the Conqueror in 1066</strong> has been crowned here. The soaring Gothic nave, <strong>Poets\' Corner</strong> (Chaucer, Dickens, and others are buried here), and royal tombs make this one of the most history-dense buildings on Earth.',
+    highlights:['Coronation spot of every English/British monarch since 1066','Poets\' Corner — graves of Dickens, Chaucer, Hardy','Oldest door in the UK — nearly 1,000 years old','The Chapter House has 13th-century floor tiles'],
+    tip:'⚠️ Closed Sunday mornings for services. Pre-book timed entry. Allow 90 minutes.' },
+
+  { id:'buckingham', name:'Buckingham Palace', city:'London', flag:'🇬🇧', emoji:'👑',
+    tags:['history','magic'], date:'Dec 21',
+    wiki:['Buckingham Palace'],
+    desc:'The official home of the British monarch since 1837. The famous <strong>Changing of the Guard ceremony</strong> is theatrical and unmistakably British — scarlet-coated soldiers, bearskin hats, and a full marching band. Beautifully decorated at Christmas.',
+    highlights:['Changing of the Guard — usually 11am, check online first','The palace has 775 rooms and 40 acres of gardens','The balcony where the royal family waves is iconic','St James\'s Park is right next door'],
+    tip:'📅 Guard ceremony is NOT every day — check the official site. Arrive 30 min early.' },
+
+  { id:'winterwonderland', name:'Hyde Park Winter Wonderland', city:'London', flag:'🇬🇧', emoji:'🎡',
+    tags:['xmas','magic','must'], date:'Dec 21',
+    wiki:['Hyde Park Winter Wonderland','Christmas market','Hyde Park, London'],
+    desc:'<strong>One of Europe\'s biggest Christmas festivals</strong> transforms Hyde Park into a fairground wonderland. Ice rink, giant Ferris wheel, Santa\'s Grotto, German market huts serving Glühwein and hot chocolate, and dozens of rides. The kids will never stop talking about this.',
+    highlights:['The ice rink is spectacular — surrounded by chalets','Giant Ferris wheel with views over London at night','Authentic German market with mulled wine','Santa\'s Grotto for the younger ones','Funfair with thrilling rides for older kids'],
+    tip:'🎟 Free to enter — rides cost extra. <strong>Book the ice rink 48hrs ahead.</strong> Go after 4pm for the lights.' },
+
+  { id:'boroughmarket', name:'Borough Market at Christmas', city:'London', flag:'🇬🇧', emoji:'🧀',
+    tags:['food','xmas','magic'], date:'Dec 20',
+    wiki:['Borough Market'],
+    desc:'London\'s most famous food market is transformed at Christmas. Warm up with <strong>mulled wine, hot chocolate, raclette, and sausages</strong>. The covered Victorian market drips with decorations — a brilliant lunch stop after the Tower of London.',
+    highlights:['Hot raclette scraped over potatoes — incredible in the cold','Famous mulled wine stalls','Fresh bread, artisan cheese, and charcuterie','A true world market of street food','Right next to Southwark Cathedral'],
+    tip:'🕐 Go 12–2pm for the best atmosphere. Busy but moves fast. Cash and card accepted.' },
+
+  { id:'colmar', name:'Colmar Christmas Markets', city:'Colmar, Alsace', flag:'🇫🇷', emoji:'🕯',
+    tags:['xmas','magic','must','food'], date:'Dec 23–26',
+    wiki:['Colmar','Christmas market'],
+    desc:'One of the most <strong>magical Christmas towns in Europe</strong>. Colmar\'s medieval half-timbered houses, draped in garlands and glowing with candles, look lifted from a storybook. The <strong>"Little Venice" canal district</strong> is otherworldly at night. Six themed Christmas villages spread across different squares.',
+    highlights:['Six distinct Christmas market villages — each themed','Little Venice canal at night — the most photographed Christmas scene in France','Flammekueche fresh from wood-fired ovens','Handmade ornaments, toys, and local crafts','Kids can collect a stamp from each market','Collégiale Saint-Martin — 800 years old'],
+    tip:'🌙 Go at dusk or after dark for full magic. Weekday evenings are quieter. Warm waterproof boots!' },
+
+  { id:'eguisheim', name:'Eguisheim Village', city:'Alsace', flag:'🇫🇷', emoji:'🏡',
+    tags:['xmas','magic','history'], date:'Dec 24',
+    wiki:['Eguisheim'],
+    desc:'Repeatedly voted <strong>France\'s Most Beautiful Village</strong>, Eguisheim is a perfectly circular medieval village — concentric streets wrapping around a 13th-century castle. Every house is decorated for Christmas. Visitors say it feels like walking into <strong>Beauty and the Beast</strong>.',
+    highlights:['The only perfectly circular village in France','Every house decorated for Christmas — it\'s a competition','The 13th-century castle at the heart of the village','Amazing local pottery and Alsatian wine','Far less crowded than Riquewihr — more intimate'],
+    tip:'🚗 15 minutes from Colmar by taxi. Arrive mid-morning on weekdays. Park outside the village walls.' },
+
+  { id:'riquewihr', name:'Riquewihr', city:'Alsace', flag:'🇫🇷', emoji:'🏘',
+    tags:['xmas','history','magic'], date:'Dec 24',
+    wiki:['Riquewihr'],
+    desc:'One of the best-preserved medieval villages in all of France, <strong>virtually unchanged since the 14th century</strong>. The Christmas market fills its single cobbled main street — decorated half-timbered houses, ancient towers, and artisan stalls selling handmade toys.',
+    highlights:['The village looks exactly as it did in the 1300s','Medieval town walls and gate towers still intact','Artisan Christmas stalls with handmade toys','The Dolder — a medieval watchtower you can climb','Famous for Riesling wine'],
+    tip:'🚗 30 minutes from Colmar. Very crowded on weekends — go weekday mornings. Allow 2 hours.' },
+
+  { id:'strasbourg', name:'Strasbourg Christmas Market', city:'Strasbourg, Alsace', flag:'🇫🇷', emoji:'🌟',
+    tags:['xmas','history','must'], date:'Dec 25',
+    wiki:['Christkindelsmärik, Strasbourg','Strasbourg Cathedral','Strasbourg'],
+    desc:'The <strong>world\'s oldest Christmas market, established in 1570</strong>. The Christkindelsmärik in Place Kléber surrounds a towering illuminated tree. At its heart stands the extraordinary <strong>Strasbourg Cathedral</strong> — a Gothic masterpiece with a famous astronomical clock whose figures move every hour.',
+    highlights:['World\'s oldest Christmas market — running since 1570','Strasbourg Cathedral: 142m Gothic spire visible for miles','The Astronomical Clock — mechanical figures since 1574','Over 300 market stalls across the city','Giant Christmas tree at Place Kléber','Half-timbered Petite France quarter nearby'],
+    tip:'🚂 45 minutes from Colmar by car or train. The cathedral clock show is at noon — arrive early.' },
+
+  { id:'notredame', name:'Notre-Dame Cathedral', city:'Paris', flag:'🇫🇷', emoji:'⛩',
+    tags:['history','art','must'], date:'Dec 26',
+    wiki:['Notre-Dame de Paris'],
+    desc:'A <strong>once-in-a-generation moment</strong>: Notre-Dame reopened in December 2024 after the 2019 fire. The restoration has made the interior <strong>more luminous than ever</strong>. Standing here, 850 years of history surround you on Île de la Cité, the original heart of Paris.',
+    highlights:['Just restored after the 2019 fire — more stunning than ever','Construction began in 1163 — took over 200 years','The rose windows are among the finest stained glass anywhere','The famous gargoyles look out over Paris','Sits on Île de la Cité — the birthplace of Paris'],
+    tip:'🎟 <strong>Pre-book timed entry</strong> — slots sell out weeks ahead. Free entry, donations welcome.' },
+
+  { id:'sainte-chapelle', name:'Sainte-Chapelle', city:'Paris', flag:'🇫🇷', emoji:'🪟',
+    tags:['history','art','must'], date:'Dec 26',
+    wiki:['Sainte-Chapelle'],
+    desc:'Built in 1248, this royal chapel is perhaps <strong>the most beautiful interior in Europe</strong>. The upper chapel is almost entirely <strong>15 floor-to-ceiling stained glass windows</strong> depicting 1,113 Bible scenes in jewel colours. Visitors literally gasp at the top of the spiral staircase.',
+    highlights:['1,113 biblical scenes across 15 windows of stained glass','Built in just 6 years — a medieval marvel','Built to house the Crown of Thorns','On sunny winter days, the light show is indescribable','Just a 5-minute walk from Notre-Dame'],
+    tip:'⏰ <strong>Go on a sunny morning</strong> — the light through the windows is magical. Book online to skip the queue.' },
+
+  { id:'louvre', name:'The Louvre Museum', city:'Paris', flag:'🇫🇷', emoji:'🔺',
+    tags:['art','history','must'], date:'Dec 27',
+    wiki:['Louvre','Mona Lisa','Venus de Milo'],
+    desc:'The world\'s largest art museum holds <strong>35,000 years of human civilisation</strong>. Don\'t try to see everything — make a plan. See the <strong>Mona Lisa</strong>, the <strong>Venus de Milo</strong>, the <strong>Winged Victory</strong>, and the Egyptian wing — kids go wild for the actual mummies.',
+    highlights:['Mona Lisa — smaller than you expect, but the room is electric','Venus de Milo — 2,000 years old, still breathtaking','Winged Victory — at the top of the grand staircase','Egyptian Antiquities — real mummies and ancient artefacts','The glass Pyramid is a masterpiece itself'],
+    tip:'📅 Closed Tuesdays. Open Wed &amp; Fri until 9pm. Enter via the Métro entrance for shorter queues.' },
+
+  { id:'eiffel', name:'Eiffel Tower', city:'Paris', flag:'🇫🇷', emoji:'🗼',
+    tags:['magic','must','history'], date:'Dec 27',
+    wiki:['Eiffel Tower'],
+    desc:'Book the <strong>summit tickets</strong> in advance — Paris from 300m at dusk is life-changing. Take the stairs to the 2nd floor, then the elevator up. After dark, the tower <strong>sparkles with thousands of golden lights every hour</strong> — pure magic.',
+    highlights:['The nightly sparkle show — every hour after dark','Take stairs to 2nd floor (great fun), elevator to summit','Paris from 300m on a clear winter evening','Built in just 2 years for the 1889 World\'s Fair','The Champ de Mars below is beautiful at night'],
+    tip:'🎟 <strong>Book summit tickets 3–4 weeks ahead.</strong> Go at dusk for both day and night views.' },
+
+  { id:'versailles', name:'Palace of Versailles', city:'Versailles', flag:'🇫🇷', emoji:'🌹',
+    tags:['history','art','must'], date:'Dec 28',
+    wiki:['Palace of Versailles','Hall of Mirrors'],
+    desc:'The most <strong>opulent palace ever built</strong>, home to Louis XIV — the Sun King. The <strong>Hall of Mirrors</strong> (73 metres of gold and glass) is astounding. The formal gardens extend for miles. In winter there are far fewer tourists.',
+    highlights:['The Hall of Mirrors — 73 metres of gilded glass','Built to contain the entire French court — 20,000 people','Formal gardens (free to walk) designed by Le Nôtre','Marie Antoinette\'s personal hamlet','Site of the signing of the Treaty of Versailles (1919)'],
+    tip:'📅 <strong>Closed Mondays.</strong> Pre-book a timed slot. Take RER C from Paris (~35 min). Allow a full day.' },
+
+  { id:'chatel', name:'Châtel', city:'French Alps', flag:'⛷️', emoji:'🏔',
+    tags:['ski','must','magic'], date:'Dec 27–Jan 1',
+    wiki:['Châtel, Haute-Savoie','Portes du Soleil'],
+    desc:'Our <strong>top pick for first-timers</strong>: quieter and more affordable than its famous neighbours, yet still plugged into the massive <strong>Portes du Soleil</strong> ski area. Gentle beginner slopes sit right in the village, the ESF ski school has English-speaking instructors, and lift passes are the cheapest of all the options. A charming Savoyard village without the inflated prices — ideal for a first family ski trip on a budget. About 1.5 hrs from Colmar.',
+    highlights:['Cheapest lift passes of all the options listed','ESF ski school — well-established, English-speaking instructors','Gentle beginner slopes right in the village','Connects to the huge Portes du Soleil area','Accommodation noticeably cheaper than Morzine or Megève'],
+    tip:'🎿 Pre-book ski school the moment you book accommodation — Christmas/New Year week fills weeks ahead. Pre-book gear online to save 10–20%.' },
+
+  { id:'lesgets', name:'Les Gets', city:'French Alps', flag:'⛷️', emoji:'🎿',
+    tags:['ski','magic'], date:'Dec 27–Jan 1',
+    wiki:['Les Gets','Portes du Soleil'],
+    desc:'A charming village with an <strong>excellent ESF ski school</strong> and very beginner-friendly terrain. Compact and easy to navigate with children, with a strong family reputation and good value by French Alps standards. About 1.5 hrs from Colmar.',
+    highlights:['Outstanding kids\' ski school with dedicated beginner areas','Good value by French Alps standards','Compact village — easy to navigate with children','Part of the Portes du Soleil network'],
+    tip:'👶 Ages 9 and 11 pick up skiing fast — full-day group lessons are best value and kids love the social side.' },
+
+  { id:'morzine', name:'Morzine', city:'French Alps', flag:'⛷️', emoji:'🏂',
+    tags:['ski','magic'], date:'Dec 27–Jan 1',
+    wiki:['Morzine','Portes du Soleil'],
+    desc:'A lively, family-friendly resort connecting to the huge <strong>Portes du Soleil</strong> area. Good value, great atmosphere, and a strong ski school. Very popular with British families, so English-speaking instructors are easy to find. About 1.5 hrs from Colmar.',
+    highlights:['Very popular with British families — easy to find English-speaking instructors','Wide variety of accommodation price points','Excellent après for adults once kids are in bed','Big connected ski area to grow into'],
+    tip:'🧤 Rent everything for a first trip — boots, skis, poles, helmets. Only worth buying: good (non-cotton) ski socks.' },
+
+  { id:'megeve', name:'Megève', city:'French Alps', flag:'⛷️', emoji:'⛷️',
+    tags:['ski','magic','must'], date:'Dec 27–Jan 1',
+    wiki:['Megève'],
+    desc:'A gorgeous, upscale village with <strong>excellent beginner slopes</strong> and an extraordinary Christmas atmosphere — arguably the most festive village base of all the options. The luxury reputation is real, so budget for accommodation carefully, but cheaper options exist on the outskirts. About 1.5 hrs from Colmar.',
+    highlights:['Exceptional Christmas market and village atmosphere','Great beginner terrain despite the luxury reputation','Budget accommodation options do exist on the outskirts','One of the most beautiful village bases in the Alps'],
+    tip:'💶 Self-catering saves a lot — an apartment with a kitchen for breakfasts and packed lunches beats eating out every meal.' },
+
+  { id:'laax', name:'Laax / Flims', city:'Swiss Alps', flag:'⛷️', emoji:'🏔',
+    tags:['ski','must','magic'], date:'Dec 27–Jan 1',
+    wiki:['Laax','Flims'],
+    desc:'Probably the <strong>best all-round Swiss option</strong> for the group: a renowned ski school, long gentle beginner runs, modern lifts, and a less pretentious vibe than Verbier or Zermatt. The <strong>Snowli Kids Club</strong> is one of Switzerland\'s best children\'s programmes. Less expensive than the Swiss celebrity resorts. About 2 hrs from Colmar via Basel.',
+    highlights:['Snowli Kids Club — one of Switzerland\'s best children\'s programmes','Dedicated beginner zones away from fast traffic','More affordable than Verbier / St. Moritz / Zermatt','Modern, well-run resort infrastructure'],
+    tip:'🌨️ Higher Swiss resorts have more reliable late-December snow. Swiss options add roughly €300–500 to the budget vs. Châtel.' },
+
+  { id:'engelberg', name:'Engelberg', city:'Swiss Alps', flag:'⛷️', emoji:'🎿',
+    tags:['ski','magic'], date:'Dec 27–Jan 1',
+    wiki:['Engelberg'],
+    desc:'Underrated and less touristy than its Swiss counterparts. Good beginner areas, a solid ski school, more affordable than the big names, and a beautiful <strong>monastery village</strong> at its base. High-altitude glacier skiing means reliable snow. About 2 hrs from Colmar.',
+    highlights:['Less crowded than bigger Swiss resorts','Good value by Swiss standards','Reliable snow — high-altitude glacier skiing','Beautiful monastery village at the base'],
+    tip:'🚗 Driving from Colmar is much cheaper than transfers — hire a large enough vehicle in Basel and check it\'s cleared for Alpine driving.' },
+
+  { id:'saasfee', name:'Saas-Fee', city:'Swiss Alps', flag:'⛷️', emoji:'🏂',
+    tags:['ski','magic','must'], date:'Dec 27–Jan 1',
+    wiki:['Saas-Fee'],
+    desc:'A <strong>car-free village</strong> where kids can roam freely with no traffic stress — exceptional with young children. Glacier skiing means near-guaranteed snow, and the ski school tradition is strong. A beautiful, safe setting. About 2 hrs from Colmar.',
+    highlights:['No cars in the village — exceptional with young children','Glacier ensures good snow conditions in late December','Strong international ski school','Dramatic high-mountain setting'],
+    tip:'🌨️ Glacier resorts like Saas-Fee offer the most snow security if you\'re worried about conditions.' },
+
+  { id:'wengen', name:'Wengen', city:'Swiss Alps', flag:'⛷️', emoji:'🚠',
+    tags:['ski','magic','must'], date:'Dec 27–Jan 1',
+    wiki:['Wengen','Jungfrau'],
+    desc:'Car-free, classic Swiss charm with iconic <strong>Jungfrau</strong> views — the Eiger, Mönch, and Jungfrau tower over the village. A magical setting that edges pricier, but worth it if the classic Swiss experience is the priority. About 2.5 hrs from Colmar.',
+    highlights:['Utterly spectacular scenery — the Eiger, Mönch, and Jungfrau','Car-free village, very safe and relaxed with kids','Great family ski school tradition','Reached by mountain railway — an adventure in itself'],
+    tip:'🚠 Wengen is reached by cog railway (no car access) — factor the train connection into your arrival day.' },
+
+  { id:'orsay', name:'Musee d Orsay', city:'Paris', flag:'🇫🇷', emoji:'🎨',
+    tags:['art','history'], date:'Dec 28',
+    wiki:['Musée d\'Orsay'],
+    desc:'Housed in a breathtaking <strong>1900 Beaux-Arts railway station</strong>, this is arguably the most beautiful museum in the world — and far less overwhelming than the Louvre. Home to the world\'s greatest Impressionist collection: <strong>Monet, Van Gogh, Renoir, Degas</strong>.',
+    highlights:['Van Gogh self-portraits — extraordinary up close','Monet\'s series paintings — light changing through time','Degas\'s Little Dancer sculpture','The iconic giant clock — a perfect photo','Far less crowded than the Louvre'],
+    tip:'📅 Closed Mondays. Open Thursday until 9:45pm. Afternoons are quieter. Under-18s free.' }
+];
+
+var ITIN = {
+  christmas:[
+    {day:'Day 1',title:'Tower & Thames',date:'Dec 20 · London',stops:['tower','boroughmarket'],bridge:null},
+    {day:'Day 2',title:'Royals & Winter Wonderland',date:'Dec 21 · London',stops:['westminster','buckingham','winterwonderland'],bridge:'✈ Flight London → Basel · Dec 23'},
+    {day:'Day 3',title:'Magical Colmar',date:'Dec 23 · Colmar',stops:['colmar'],bridge:null},
+    {day:'Day 4',title:'Christmas Eve — Village Hopping',date:'Dec 24 · Alsace',stops:['eguisheim','riquewihr'],bridge:null},
+    {day:'Day 5',title:'Christmas Day — Strasbourg',date:'Dec 25 · Alsace',stops:['strasbourg'],bridge:'🚄 TGV Colmar → Paris · Dec 26 · ~2.5 hrs'},
+    {day:'Day 6',title:'The Ancient Heart of Paris',date:'Dec 26 · Paris',stops:['notredame','sainte-chapelle'],bridge:null},
+    {day:'Day 7',title:'Louvre & Eiffel Tower',date:'Dec 27 · Paris',stops:['louvre','eiffel'],bridge:null},
+    {day:'Day 8',title:'Versailles & Orsay',date:'Dec 28 · Paris',stops:['versailles','orsay'],bridge:null}
+  ],
+  medieval:[
+    {day:'Priority 1',title:'Tower of London',date:'Dec 20 · London',stops:['tower'],note:'Built by William the Conqueror — nearly 1,000 years of history. The ultimate medieval castle.',bridge:null},
+    {day:'Priority 2',title:'Westminster Abbey',date:'Dec 21 · London',stops:['westminster'],note:'Coronation church of every English monarch since 1066 — Gothic architecture at its most powerful.',bridge:null},
+    {day:'Priority 3',title:'Riquewihr & Eguisheim',date:'Dec 24 · Alsace',stops:['riquewihr','eguisheim'],note:'Two perfectly preserved medieval villages — Riquewihr is unchanged since the 1300s.',bridge:null},
+    {day:'Priority 4',title:'Strasbourg Cathedral',date:'Dec 25 · Alsace',stops:['strasbourg'],note:'The astronomical clock alone is worth the trip — moving since 1574.',bridge:null},
+    {day:'Priority 5',title:'Notre-Dame & Sainte-Chapelle',date:'Dec 26 · Paris',stops:['notredame','sainte-chapelle'],note:'Two of the greatest Gothic masterpieces ever built — minutes apart.',bridge:null},
+    {day:'Priority 6',title:'Palace of Versailles',date:'Dec 28 · Paris',stops:['versailles'],note:'Absolute monarchy at its most extravagant — the Hall of Mirrors is unlike anything else.',bridge:null}
+  ],
+  art:[
+    {day:'Stop 1',title:'Sainte-Chapelle',date:'Dec 26 · Paris',stops:['sainte-chapelle'],note:'The pinnacle of medieval stained glass — many consider it the most beautiful interior in the world.',bridge:null},
+    {day:'Stop 2',title:'Notre-Dame de Paris',date:'Dec 26 · Paris',stops:['notredame'],note:'The restored cathedral is a triumph of Gothic art — the rose windows are extraordinary.',bridge:null},
+    {day:'Stop 3',title:'The Louvre',date:'Dec 27 · Paris',stops:['louvre'],note:'35,000 years of human art in one building. Don\'t miss the Winged Victory.',bridge:null},
+    {day:'Stop 4',title:'Musée d\'Orsay',date:'Dec 28 · Paris',stops:['orsay'],note:'The world\'s finest Impressionist collection in the most beautiful museum building on Earth.',bridge:null},
+    {day:'Stop 5',title:'Westminster Abbey',date:'Dec 21 · London',stops:['westminster'],note:'One of the finest examples of Gothic architecture in Britain.',bridge:null},
+    {day:'Stop 6',title:'Palace of Versailles',date:'Dec 28 · Paris',stops:['versailles'],note:'Baroque art and architecture at its absolute peak.',bridge:null}
+  ],
+  alps:[
+    {day:'Day 8',title:'Arrival & Half Day on Snow ⛷️ ½',date:'Dec 27 · The Alps',stops:[],note:'Drive from Colmar to your chosen resort (~1.5–2.5 hrs). Collect pre-booked rental gear, then an informal afternoon on the nursery slope — just getting comfortable walking in boots, sliding, and stopping. No instructor needed yet.',bridge:'🚗 Drive Colmar → Alps · Dec 27'},
+    {day:'Day 9',title:'First Full Day Ski School ⛷️ 1',date:'Dec 28 · The Alps',stops:[],note:'Kids into full-day group ski school first thing. Adults take a beginner group lesson together in the morning, then ski freely in the afternoon. By day\'s end the kids will likely be linking turns on the nursery slope independently.',bridge:null},
+    {day:'Day 10',title:'Second Full Day ⛷️ 2',date:'Dec 29 · The Alps',stops:[],note:'Day two is where it clicks. Kids move up a group level and tackle longer runs; adults venture onto easy blue runs. By afternoon you may ski a gentle blue together as a family for the first time — a genuine milestone.',bridge:null},
+    {day:'Day 11',title:'Third Full Day ⛷️ 3',date:'Dec 30 · The Alps',stops:[],note:'The reward day. Final ski school session in the morning to consolidate technique, then free family skiing: a favourite easy blue, lifts together, hot chocolate mid-mountain. Take photos and soak it in.',bridge:null},
+    {day:'Day 12',title:'New Year\'s Eve — Morning Ski + Celebration',date:'Dec 31 · The Alps',stops:[],note:'One final celebratory morning on the slopes with the whole family, then check out after lunch. Many resorts hold spectacular mountain fireworks on NYE — if your flight is Jan 1, staying to watch is unforgettable.',bridge:'🎆 New Year in the Alps · fly home Jan 1'}
+  ]
+};
+
+/* Resort options shown as cards within the Alps section */
+var ALPS_RESORTS = {
+  france: ['chatel','lesgets','morzine','megeve'],
+  swiss:  ['laax','engelberg','saasfee','wengen']
+};
+
+function getStop(id){ for(var i=0;i<STOPS.length;i++){ if(STOPS[i].id===id) return STOPS[i]; } return null; }
+
+/* ---- image fallback (no inline strings, all via data attributes) ---- */
+function imgFallback(el){
+  var wrap = el.parentElement;
+  if(!wrap) return;
+  el.style.display='none';
+  if(wrap.querySelector('.img-fallback')) return;
+  var fb=document.createElement('div'); fb.className='img-fallback';
+  var e=document.createElement('span'); e.className='fb-emoji'; e.textContent=el.getAttribute('data-emoji')||'🖼';
+  var l=document.createElement('span'); l.textContent=el.getAttribute('data-label')||'';
+  fb.appendChild(e); fb.appendChild(l);
+  wrap.appendChild(fb);
+}
+
+/* ---- carousel ---- */
+var carouselIndex = {};
+
+function buildCarousel(stop){
+  var imgs = stop.images || [];
+  if(!imgs.length) return '<div class="modal-carousel"><div class="img-fallback"><span class="fb-emoji">'+stop.emoji+'</span><span>'+esc(stop.name)+'</span></div></div>';
+  var slides='';
+  for(var i=0;i<imgs.length;i++){
+    slides += '<div class="carousel-slide"><img src="'+imgs[i]+'" alt="" loading="lazy" data-emoji="'+stop.emoji+'" data-label="'+esc(stop.name)+'" onerror="imgFallback(this)"><div class="carousel-gradient"></div></div>';
+  }
+  var controls='';
+  if(imgs.length>1){
+    var dots='';
+    for(var d=0;d<imgs.length;d++){ dots += '<button class="carousel-dot'+(d===0?' active':'')+'" onclick="goSlide(\''+stop.id+'\','+d+')"></button>'; }
+    controls = '<button class="carousel-btn prev" onclick="moveSlide(\''+stop.id+'\',-1)">‹</button>'+
+               '<button class="carousel-btn next" onclick="moveSlide(\''+stop.id+'\',1)">›</button>'+
+               '<div class="carousel-dots">'+dots+'</div>'+
+               '<div class="carousel-counter"><span id="cc-'+stop.id+'">1</span> / '+imgs.length+'</div>';
+  }
+  carouselIndex[stop.id]=0;
+  return '<div class="modal-carousel"><div class="carousel-track" id="track-'+stop.id+'">'+slides+'</div>'+controls+'</div>';
+}
+
+function moveSlide(id,dir){
+  var stop=getStop(id); var n=stop.images.length;
+  goSlide(id, (carouselIndex[id]+dir+n)%n);
+}
+function goSlide(id,idx){
+  carouselIndex[id]=idx;
+  var track=document.getElementById('track-'+id);
+  if(track) track.style.transform='translateX(-'+(idx*100)+'%)';
+  var cc=document.getElementById('cc-'+id);
+  if(cc) cc.textContent=idx+1;
+  if(track){
+    var dots=track.parentElement.querySelectorAll('.carousel-dot');
+    for(var i=0;i<dots.length;i++){ dots[i].classList.toggle('active',i===idx); }
+  }
+}
+
+function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;'); }
+
+/* card thumbnail */
+function cardImage(stop, cls){
+  var imgs=stop.images||[];
+  var h = imgs.length>1 ? '<span class="card-count">📷 '+imgs.length+' photos</span>' : '';
+  if(!imgs.length){
+    var msg = (stop.images===undefined) ? 'loading photos…' : esc(stop.name);
+    return '<div class="card-imgwrap"><div class="img-fallback"><span class="fb-emoji">'+stop.emoji+'</span><span>'+msg+'</span></div></div>';
+  }
+  return '<div class="card-imgwrap"><img class="card-thumb" src="'+imgs[0]+'" alt="" loading="lazy" data-emoji="'+stop.emoji+'" data-label="'+esc(stop.name)+'" onerror="imgFallback(this)">'+h+'</div>';
+}
+
+/* ---- navigation ---- */
+function showSection(id){
+  var secs=document.querySelectorAll('.page-section');
+  for(var i=0;i<secs.length;i++) secs[i].classList.remove('active');
+  var btns=document.querySelectorAll('.nav-btn');
+  for(var j=0;j<btns.length;j++) btns[j].classList.remove('active');
+  document.getElementById('sec-'+id).classList.add('active');
+  document.getElementById('nav-'+id).classList.add('active');
+  window.scrollTo({top:document.querySelector('.site-nav').offsetTop,behavior:'smooth'});
+}
+
+/* ---- tags ---- */
+function renderTags(tags){
+  var map={history:'stag-history',xmas:'stag-xmas',magic:'stag-magic',art:'stag-art',food:'stag-food',must:'stag-must',ski:'stag-ski'};
+  var lab={history:'History',xmas:'Christmas',magic:'Magic',art:'Art',food:'Food',must:'Must-See',ski:'Skiing'};
+  var out='';
+  for(var i=0;i<tags.length;i++){ out += '<span class="stag '+(map[tags[i]]||'')+'">'+(lab[tags[i]]||tags[i])+'</span>'; }
+  return out;
+}
+
+/* ---- highlights grid ---- */
+function renderExcitement(){
+  var order=['colmar','eiffel','notredame','sainte-chapelle','winterwonderland','strasbourg','tower','versailles','louvre','eguisheim','riquewihr','westminster'];
+  var html='';
+  for(var i=0;i<order.length;i++){
+    var s=getStop(order[i]); if(!s) continue;
+    html += '<div class="exc-card" onclick="openModal(\''+s.id+'\')">'+
+      cardImage(s)+
+      '<div class="exc-pad"><span class="exc-emoji">'+s.emoji+'</span>'+
+      '<div class="exc-name">'+s.name+'</div>'+
+      '<div class="exc-city">'+s.flag+' '+s.city+'</div>'+
+      '<div class="exc-tease">'+stripTags(s.desc).substring(0,90)+'…</div></div></div>';
+  }
+  document.getElementById('exc-grid').innerHTML=html;
+}
+
+function stripTags(s){ return s.replace(/<[^>]+>/g,''); }
+
+/* ---- vote ---- */
+var votes={}, hasVoted=false;
+function renderVote(){
+  var options=['🏰 Tower of London','🎡 Winter Wonderland','🕯 Colmar Markets','🗼 Eiffel Tower','⛩ Notre-Dame','🪟 Sainte-Chapelle','🌹 Versailles','🌟 Strasbourg'];
+  var html='';
+  for(var i=0;i<options.length;i++){
+    var key=options[i].replace(/[^a-z]/gi,'');
+    votes[options[i]]=0;
+    html += '<button class="vote-btn" id="vb-'+key+'" onclick="castVote(\''+options[i].replace(/'/g,"\\'")+'\')">'+options[i]+' <span class="vote-count" id="vc-'+key+'">0</span></button>';
+  }
+  document.getElementById('vote-grid').innerHTML=html;
+}
+function castVote(opt){
+  var key=opt.replace(/[^a-z]/gi,'');
+  if(hasVoted){ document.getElementById('vote-result').textContent='You already voted! 😄'; return; }
+  votes[opt]=(votes[opt]||0)+1; hasVoted=true;
+  document.getElementById('vc-'+key).textContent=votes[opt];
+  document.getElementById('vb-'+key).classList.add('voted');
+  document.getElementById('vote-result').textContent='✨ Great choice! Most excited about: '+opt;
+}
+
+/* ---- timelines ---- */
+function renderTimeline(containerId, itin){
+  var html='<div class="timeline">';
+  for(var i=0;i<itin.length;i++){
+    var day=itin[i];
+    html += '<div class="tl-day"><div class="tl-day-header"><span class="tl-day-num">'+day.day+'</span><span class="tl-day-title">'+day.title+'</span><span class="tl-day-date">'+day.date+'</span></div><div class="tl-stops">';
+    if(day.note){
+      var noteOnly = (!day.stops || !day.stops.length);
+      var icon = noteOnly ? (day.title.indexOf('⛷')>-1||day.title.indexOf('Ski')>-1||day.date.indexOf('Alps')>-1 ? '🎿' : '📝') : '📝';
+      var style = noteOnly ? '' : 'cursor:default;border-style:dashed';
+      html += '<div class="tl-stop" style="'+style+'"><span class="tl-stop-icon">'+icon+'</span><div><div class="tl-stop-note">'+day.note+'</div></div></div>';
+    }
+    for(var k=0;k<day.stops.length;k++){
+      var s=getStop(day.stops[k]); if(!s) continue;
+      var thumb = (s.images&&s.images.length)
+        ? '<div class="tl-thumb-wrap"><img class="tl-thumb" src="'+s.images[0]+'" alt="" loading="lazy" data-emoji="'+s.emoji+'" data-label="" onerror="imgFallback(this)"></div>'
+        : '<span class="tl-stop-icon">'+s.emoji+'</span>';
+      html += '<div class="tl-stop" onclick="openModal(\''+s.id+'\')">'+thumb+
+        '<div><div class="tl-stop-name">'+s.name+'</div>'+
+        '<div class="tl-stop-note">'+stripTags(s.desc).substring(0,95)+'… <span style="color:var(--gold)">tap to explore →</span></div></div></div>';
+    }
+    html += '</div>';
+    if(day.bridge){
+      html += '<div class="tl-bridge"><div class="tl-bridge-line"></div>'+day.bridge+'<div class="tl-bridge-line" style="transform:scaleX(-1)"></div></div>';
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+  document.getElementById(containerId).innerHTML=html;
+}
+
+/* ---- alps resort grids ---- */
+function renderResortGrid(gridId, ids){
+  var html='';
+  for(var i=0;i<ids.length;i++){
+    var s=getStop(ids[i]); if(!s) continue;
+    html += '<div class="stop-card" onclick="openModal(\''+s.id+'\')">'+
+      cardImage(s)+
+      '<div class="stop-card-pad"><span class="stop-card-emoji">'+s.emoji+'</span>'+
+      '<div class="stop-card-name">'+s.name+'</div>'+
+      '<div class="stop-card-city">'+s.city+'</div>'+
+      '<div class="stop-card-desc">'+stripTags(s.desc).substring(0,110)+'…</div>'+
+      '<div class="stop-tags">'+renderTags(s.tags)+'</div></div></div>';
+  }
+  document.getElementById(gridId).innerHTML=html;
+}
+function renderAlpsResorts(){
+  renderResortGrid('alps-france-grid', ALPS_RESORTS.france);
+  renderResortGrid('alps-swiss-grid', ALPS_RESORTS.swiss);
+}
+
+/* ---- resort vote ---- */
+var resortVotes={}, resortVoted=false;
+function renderResortVote(){
+  var ids=ALPS_RESORTS.france.concat(ALPS_RESORTS.swiss);
+  var html='';
+  for(var i=0;i<ids.length;i++){
+    var s=getStop(ids[i]); if(!s) continue;
+    var key=ids[i];
+    resortVotes[key]=0;
+    html += '<button class="vote-btn" id="rvb-'+key+'" onclick="castResortVote(\''+key+'\')">'+s.emoji+' '+s.name+' <span class="vote-count" id="rvc-'+key+'">0</span></button>';
+  }
+  document.getElementById('resort-vote-grid').innerHTML=html;
+}
+function castResortVote(key){
+  if(resortVoted){ document.getElementById('resort-vote-result').textContent='You already voted! 😄'; return; }
+  resortVotes[key]=(resortVotes[key]||0)+1; resortVoted=true;
+  document.getElementById('rvc-'+key).textContent=resortVotes[key];
+  document.getElementById('rvb-'+key).classList.add('voted');
+  var s=getStop(key);
+  document.getElementById('resort-vote-result').textContent='✨ Great pick! The family leans toward: '+s.name;
+}
+
+/* ---- all stops + filters ---- */
+var FILTERS=['All','London','Alsace','Paris','Alps','History','Christmas','Art','Skiing','Magic','Must-See'];
+var activeFilter='All';
+function renderFilterBar(){
+  var html='';
+  for(var i=0;i<FILTERS.length;i++){
+    html += '<button class="vote-btn'+(FILTERS[i]===activeFilter?' voted':'')+'" onclick="setFilter(\''+FILTERS[i]+'\')" style="font-size:12px;padding:8px 16px">'+FILTERS[i]+'</button>';
+  }
+  document.getElementById('filter-bar').innerHTML=html;
+}
+function setFilter(f){ activeFilter=f; renderFilterBar(); renderAllStops(); }
+function matchFilter(s,f){
+  if(f==='All') return true;
+  if(f==='London') return s.city.indexOf('London')>-1;
+  if(f==='Alsace') return s.city.indexOf('Alsace')>-1||s.city.indexOf('Colmar')>-1||s.city.indexOf('Strasbourg')>-1;
+  if(f==='Paris') return s.city.indexOf('Paris')>-1||s.city.indexOf('Versailles')>-1;
+  if(f==='Alps') return s.city.indexOf('Alps')>-1;
+  if(f==='Skiing') return s.tags.indexOf('ski')>-1;
+  if(f==='History') return s.tags.indexOf('history')>-1;
+  if(f==='Christmas') return s.tags.indexOf('xmas')>-1;
+  if(f==='Art') return s.tags.indexOf('art')>-1;
+  if(f==='Magic') return s.tags.indexOf('magic')>-1;
+  if(f==='Must-See') return s.tags.indexOf('must')>-1;
+  return true;
+}
+function renderAllStops(){
+  var filtered=[];
+  for(var i=0;i<STOPS.length;i++){ if(matchFilter(STOPS[i],activeFilter)) filtered.push(STOPS[i]); }
+  var cities=[];
+  for(var j=0;j<filtered.length;j++){ if(cities.indexOf(filtered[j].city)<0) cities.push(filtered[j].city); }
+  var html='';
+  for(var c=0;c<cities.length;c++){
+    var cityStops=filtered.filter(function(s){ return s.city===cities[c]; });
+    html += '<div class="dest-block"><div class="dest-label"><span class="dest-flag">'+cityStops[0].flag+'</span><span class="dest-name">'+cities[c]+'</span></div><div class="stops-grid">';
+    for(var k=0;k<cityStops.length;k++){
+      var s=cityStops[k];
+      html += '<div class="stop-card" onclick="openModal(\''+s.id+'\')">'+
+        cardImage(s)+
+        '<div class="stop-card-pad"><span class="stop-card-emoji">'+s.emoji+'</span>'+
+        '<div class="stop-card-name">'+s.name+'</div>'+
+        '<div class="stop-card-city">'+s.date+'</div>'+
+        '<div class="stop-card-desc">'+stripTags(s.desc).substring(0,110)+'…</div>'+
+        '<div class="stop-tags">'+renderTags(s.tags)+'</div></div></div>';
+    }
+    html += '</div></div>';
+  }
+  document.getElementById('allstops-grid').innerHTML = html || '<p style="color:rgba(255,255,255,.4);text-align:center;padding:60px">No stops match this filter.</p>';
+}
+
+/* ---- modal ---- */
+function openModal(id){
+  var s=getStop(id); if(!s) return;
+  document.getElementById('m-carousel').innerHTML=buildCarousel(s);
+  document.getElementById('m-emoji').textContent=s.emoji;
+  document.getElementById('m-city').textContent=s.flag+' '+s.city+' · '+s.date;
+  document.getElementById('m-name').textContent=s.name;
+  document.getElementById('m-tags').innerHTML=renderTags(s.tags);
+  document.getElementById('m-desc').innerHTML=s.desc;
+  var hlDiv=document.getElementById('m-highlights'), hlList=document.getElementById('m-highlights-list');
+  if(s.highlights&&s.highlights.length){
+    var lis='';
+    for(var i=0;i<s.highlights.length;i++){ lis += '<li>'+s.highlights[i]+'</li>'; }
+    hlList.innerHTML=lis; hlDiv.style.display='block';
+  } else { hlDiv.style.display='none'; }
+  var tipDiv=document.getElementById('m-tip');
+  if(s.tip){ tipDiv.innerHTML=s.tip; tipDiv.style.display='block'; } else { tipDiv.style.display='none'; }
+  var box=document.getElementById('modal-box'); if(box) box.scrollTop=0;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModalBtn(){
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('modal-overlay').addEventListener('click',function(e){
+  if(e.target===this) closeModalBtn();
+});
+document.addEventListener('keydown',function(e){
+  var open=document.getElementById('modal-overlay').classList.contains('open');
+  if(e.key==='Escape') closeModalBtn();
+  if(open){
+    var track=document.querySelector('.modal-carousel .carousel-track');
+    if(track){
+      var id=track.id.replace('track-','');
+      var stop=getStop(id);
+      if(stop&&stop.images&&stop.images.length>1){
+        if(e.key==='ArrowRight') moveSlide(id,1);
+        if(e.key==='ArrowLeft') moveSlide(id,-1);
+      }
+    }
+  }
+});
+
+/* swipe */
+var touchX=0;
+document.addEventListener('touchstart',function(e){ if(e.target.closest&&e.target.closest('.modal-carousel')) touchX=e.touches[0].clientX; },{passive:true});
+document.addEventListener('touchend',function(e){
+  var car=e.target.closest&&e.target.closest('.modal-carousel');
+  if(!car||!touchX) return;
+  var dx=e.changedTouches[0].clientX-touchX;
+  if(Math.abs(dx)>40){
+    var track=car.querySelector('.carousel-track');
+    if(track) moveSlide(track.id.replace('track-',''), dx<0?1:-1);
+  }
+  touchX=0;
+},{passive:true});
+
+/* ---- snow ---- */
+function spawnSnow(){
+  var c=document.getElementById('snow');
+  var flakes=['❄','❅','❆','✦','·'];
+  for(var i=0;i<26;i++){
+    var f=document.createElement('span');
+    f.className='flake';
+    f.textContent=flakes[Math.floor(Math.random()*flakes.length)];
+    f.style.left=(Math.random()*100)+'%';
+    f.style.fontSize=(8+Math.random()*8)+'px';
+    f.style.animationDuration=(6+Math.random()*8)+'s';
+    f.style.animationDelay=(Math.random()*10)+'s';
+    f.style.opacity=(.3+Math.random()*.5);
+    c.appendChild(f);
+  }
+}
+
+/* ---- init ---- */
+function renderAll(){
+  renderExcitement();
+  renderTimeline('christmas-timeline',ITIN.christmas);
+  renderTimeline('medieval-timeline',ITIN.medieval);
+  renderTimeline('art-timeline',ITIN.art);
+  renderTimeline('alps-timeline',ITIN.alps);
+  renderAlpsResorts();
+  renderAllStops();
+}
+
+function init(){
+  try{
+    spawnSnow();
+    renderVote();
+    renderResortVote();
+    renderFilterBar();
+    renderAll();            // render immediately with emoji placeholders
+  }catch(err){
+    console.error('Init error:',err);
+    var g=document.getElementById('exc-grid');
+    if(g) g.innerHTML='<p style="color:#e88;text-align:center;padding:40px">Render error: '+err.message+'</p>';
+  }
+
+  // Now fetch real images from Wikipedia, then re-render as they arrive.
+  try{
+    Promise.all(STOPS.map(function(s){ return loadImagesFor(s); })).then(function(){
+      renderAll();
+      // set hero background to Colmar's first image if available
+      var colmar=getStop('colmar');
+      var hb=document.getElementById('hero-bgimg');
+      if(hb && colmar && colmar.images && colmar.images.length){
+        hb.style.backgroundImage='url("'+colmar.images[0]+'")';
+      }
+      // if a modal is open, refresh its carousel
+      var overlay=document.getElementById('modal-overlay');
+      if(overlay && overlay.classList.contains('open')){
+        var track=document.querySelector('.modal-carousel .carousel-track');
+        if(track){ openModal(track.id.replace('track-','')); }
+      }
+    });
+  }catch(e){ console.error('Image load error:',e); }
+}
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',init);
+}else{
+  init();
+}
+</script>
+</body>
+</html>
